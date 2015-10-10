@@ -44,9 +44,13 @@ updateMapBounds = (map) ->
   console.log 'Schnauze.Map:bounds', mapBoundsSession
   Session.set 'Schnauze.Map:bounds', mapBoundsSession
 
-updateMapBoundsOnZoom = (map) ->
+listenUpdateMapBounds = (map) ->
   map.instance.addListener 'zoom_changed', ->
     console.log 'zoom_changed'
+    updateMapBounds map
+
+  map.instance.addListener 'bounds_changed', ->
+    console.log 'bounds_changed'
     updateMapBounds map
 
 renderRadius = (map, marker) ->
@@ -91,7 +95,7 @@ onMapReady = (map) ->
   }
 
   renderRadius map, marker
-  updateMapBoundsOnZoom map
+  listenUpdateMapBounds map
   updateMarkers map, markers
   centerMap map, marker
 
