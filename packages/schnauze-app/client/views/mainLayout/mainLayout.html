@@ -4,8 +4,12 @@
       {{> map}}
     </div>
     <div class="l-bottom js-bottom-view {{listStateClass}}">
-      {{> menu}}
-      {{> list}}
+      <div class="l-col l-col-full">
+        {{> menu}}
+        <div class="l-item-strech l-item-scroll">
+          {{> list}}
+        </div>
+      </div>
     </div>
   </div>
 </template>
