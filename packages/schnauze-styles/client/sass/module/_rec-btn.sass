@@ -1,0 +1,32 @@
+.recbtn
+  +size(75px)
+  transition: width .5s cubic-bezier(.62, .28, .23, .99), height .5s cubic-bezier(.62, .28, .23, .99)
+  background: $primary
+  display: block
+  margin: 0 auto
+  border-radius: 50%
+  position: relative
+  color: white
+  text-align: center
+  z-index: 5
+  .i
+    +center(iw(i-mic),ih(i-mic))
+    transition: top .5s cubic-bezier(.62, .28, .23, .99), margin-top .5s cubic-bezier(.62, .28, .23, .99)
+
+.recbtn_time
+  +center-transform()
+  line-height: 45px
+  font-weight: bold
+  font-size: 42px
+  opacity: 0
+  transition: opacity 1.2s 1.8s
+
+
+.recbtn.start-rec
+  +size(235px)
+  .i
+    top: 179px
+    margin-top: 0
+  .recbtn_time
+    opacity: 1
+    height: 45px
