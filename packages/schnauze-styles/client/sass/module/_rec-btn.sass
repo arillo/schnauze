@@ -2,34 +2,54 @@
 // Record button
 //============================================
 
+
+// Btn
+//============================================
+
 .recbtn
-  +size(75px)
+  +size(76px)
   +pos(50% 18px, left bottom)
   transform: translate(-50%, 0)
-  transition: width .5s $anim-cubic , height .5s $anim-cubic
-  background: $primary
-  border-radius: 50%
   color: white
   text-align: center
 
-  .i
-    +center(iw(i-mic),ih(i-mic))
-    transition: top .5s $anim-cubic, margin-top .5s $anim-cubic
+  &.is-recording
+    +size(235px)
+
+
+// Background
+//============================================
+
+.recbtn_bg
+  +size(76px)
+  +pos(50% 0, left bottom)
+  margin-left: -38px
+  border-radius: 50%
+  background: $primary
+  transition: transform .5s $anim-cubic
+  transform-origin: 50% bottom
+
+  .is-recording &
+    transform: scale(3.05)
+
+// Icon
+//============================================
+
+.recbtn_icon
+  +pos(50% 16px, left bottom)
+  margin-left: -(iw('i-mic') / 2)
+
+
+// Time
+//============================================
 
 .recbtn_time
   +center-transform()
-  line-height: 45px
   font-weight: bold
-  font-size: 42px
   opacity: 0
-  transition: opacity 1.2s 1.8s
+  transition: opacity .5s $anim-cubic, font-size .5s $anim-cubic
 
-
-.recbtn.start-rec
-  +size(235px)
-  .i
-    top: 179px
-    margin-top: 0
-  .recbtn_time
+  .is-recording &
+    font-size: 42px
     opacity: 1
     height: 45px
