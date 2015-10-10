@@ -35,9 +35,12 @@ Template.map.onCreated () ->
       center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       marker.setPosition center
 
+    window.map = map.instance
+
     centerMap = ->
       Schnauze.Geolocator.getPosition()
         .then (position) ->
+          console.log position
           center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
           map.instance.setCenter center
           marker.setPosition center
@@ -48,6 +51,9 @@ Template.map.onCreated () ->
     centerMap()
 
     Schnauze.EventEmitter.on 'Menu:toggleList', ->
-      setTimeout centerMap, 200
+      setTimeout ->
+        google.maps.event.trigger map.instance, 'resize'
+        centerMap()
+      , 200
 
     Schnauze.EventEmitter.on 'Menu:centerMap', centerMap
