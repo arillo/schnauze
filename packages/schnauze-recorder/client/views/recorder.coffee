@@ -17,7 +17,7 @@ Template.recorder.events
     t.isRecording.set true
     t.countdownTimer.start()
 
-  'mouseup, touchend .js-recorder': (e, t) ->
+  'mouseleave, mouseup, touchend .js-recorder': (e, t) ->
     Schnauze.Recorder.stop()
     t.isRecording.set false
     t.countdownTimer.stop()

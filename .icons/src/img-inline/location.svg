@@ -4,7 +4,7 @@
 <svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="22px"
 	 viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve">
-<path id="Shape_1_" fill="#FFFFFF" d="M11,7c-2.21,0-4,1.79-4,4s1.79,4,4,4s4-1.79,4-4S13.21,7,11,7L11,7z M19.939,10
+<path id="Shape_1_" d="M11,7c-2.21,0-4,1.79-4,4s1.79,4,4,4s4-1.79,4-4S13.21,7,11,7L11,7z M19.939,10
 	C19.48,5.83,16.17,2.52,12,2.06V0h-2v2.06C5.83,2.52,2.52,5.83,2.06,10H0v2h2.06c0.46,4.17,3.77,7.48,7.94,7.939V22h2v-2.061
 	c4.17-0.459,7.48-3.77,7.939-7.939H22v-2H19.939L19.939,10z M11,18c-3.87,0-7-3.13-7-7s3.13-7,7-7s7,3.13,7,7S14.87,18,11,18L11,18z
 	"/>

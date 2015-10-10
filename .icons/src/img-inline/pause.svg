@@ -4,8 +4,8 @@
 <svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="24px"
 	 viewBox="0 0 20 24" enable-background="new 0 0 20 24" xml:space="preserve">
-<path id="Shape" fill="#FFFFFF" d="M13,21.995C13,23.103,13.887,24,15.006,24h2.988C19.102,24,20,23.104,20,21.995V2.005
+<path id="Shape" d="M13,21.995C13,23.103,13.887,24,15.006,24h2.988C19.102,24,20,23.104,20,21.995V2.005
 	C20,0.897,19.113,0,17.994,0h-2.988C13.898,0,13,0.896,13,2.005V21.995z"/>
-<path id="Shape_1_" fill="#FFFFFF" d="M0,21.995C0,23.103,0.887,24,2.006,24h2.988C6.102,24,7,23.104,7,21.995V2.005
+<path id="Shape_1_" d="M0,21.995C0,23.103,0.887,24,2.006,24h2.988C6.102,24,7,23.104,7,21.995V2.005
 	C7,0.897,6.113,0,4.994,0H2.006C0.898,0,0,0.896,0,2.005V21.995z"/>
 </svg>

@@ -1,6 +1,6 @@
 <template name="recorder">
-  <div class="js-recorder recbtn {{#if isRecording}}start-rec{{/if}}">
+  <button class="js-recorder recbtn {{#if isRecording}}start-rec{{/if}}">
     <span class="recbtn_time">{{countdown}}</span>
-    <svg class="i i-mic"><use xlink:href="#mic"></use></svg>
-  </div>
+    <svg class="i i-mic i-fill-white"><use xlink:href="#mic"></use></svg>
+  </button>
 </template>

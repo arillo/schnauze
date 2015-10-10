@@ -15,6 +15,7 @@ Package.onUse(function(api) {
     'schnauze:recorder',
     'schnauze:geo',
     'schnauze:map',
+    'schnauze:menu',
     'schnauze:list'
   ];
 
