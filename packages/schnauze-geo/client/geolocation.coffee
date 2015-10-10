@@ -4,7 +4,7 @@ class Geolocator
     timeout: 5000
     enableHighAccuracy: true
 
-  getLocation: ->
+  getPosition: ->
     deferred = Q.defer()
 
     successCallback = (position)->
@@ -18,7 +18,7 @@ class Geolocator
 
     deferred.promise
 
-  watchLocation: ->
+  watchPosition: ->
     successCallback = (position) ->
       Schnauze.EventEmitter.emit 'Geolocation:locationChange', position
 
@@ -27,4 +27,10 @@ class Geolocator
 
     navigator.geolocation.watchPosition successCallback, errorCallback, @settings
 
-Schnauze.Utils.Geolocator = new Geolocator
+Schnauze.Geolocator = geolocator = new Geolocator
+
+geolocator.getPosition()
+  .then ->
+    geolocator.watchPosition()
+  .catch ->
+    alert 'Error: Please enable geolocation'
