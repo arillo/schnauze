@@ -52,6 +52,7 @@ Package.onUse(function(api) {
     'client/sass/module/_map.sass',
     'client/sass/module/_rec-btn.sass',
     'client/sass/module/_menu.sass',
+    'client/sass/module/_audiolist.sass',
 
     'client/sass/utilities/_animation.sass',
     'client/sass/utilities/_cursor.sass',

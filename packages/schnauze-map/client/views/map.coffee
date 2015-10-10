@@ -7,7 +7,7 @@ Template.map.helpers
     if GoogleMaps.loaded()
       # Map initialization options
       return {
-        center: new google.maps.LatLng(52.5123008, 13.4460634)
+        center: new google.maps.LatLng(0, 0)
         zoom: 14
         disableDefaultUI: true
         styles: Schnauze.Utils.MapStyles
@@ -40,8 +40,9 @@ Template.map.onCreated () ->
         .then (position) ->
           center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
           map.instance.setCenter center
+          marker.setPosition center
         .catch (error) ->
-          console.log error
+          console.log 'Error - centerMap', error
 
     # center map once on startup
     centerMap()
