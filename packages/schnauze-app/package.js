@@ -13,7 +13,7 @@ Package.onUse(function(api) {
     'schnauze:lib',
     'schnauze:styles',
     'schnauze:recorder',
-    'schnauze:geo'
+    'schnauze:geo',
     'schnauze:map'
   ];
 
