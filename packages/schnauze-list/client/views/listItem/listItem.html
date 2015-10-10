@@ -1,15 +1,16 @@
 <template name="listItem">
+  {{player}}
   <li class="list_item">
-    <a class="list_item_trigger l-centerRow">
+    <a class="list_item_trigger js-listItem l-centerRow">
       <div class="list_item_btn list_item_btn-play">
         <svg class="i i-play i-fill-white"><use xlink:href="#play"></use></svg>
       </div>
       <div class="list_item_btn list_item_btn-pause">
-        <svg class="i i-pause"><use xlink:href="#pause"></use></svg>
+        <svg class="i i-pause i-fill-white"><use xlink:href="#pause"></use></svg>
       </div>
       <div class="l-item-strech">
         <svg class="i i-avatar"><use xlink:href="#avatar"></use></svg><span class="list_item_data_name">Anonimous</span>
-        <p>5s - 3 Oct. 4.20</p>
+        <p>{{updatedAt}}</p>
       </div>
       <div class="list_item_pulse">
         <svg class="i i-pulse i-fill-white"><use xlink:href="#pulse"></use></svg>
