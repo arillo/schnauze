@@ -1,4 +1,4 @@
-AUDIO_DURATION = 30
+audioDuration = Schnauze.Settings.Recorder.audioDuration
 
 class Recorder
 
@@ -13,7 +13,7 @@ class Recorder
     ), ((msg) ->
       console.log '[recorder:record] error', msg
       return
-    ), AUDIO_DURATION
+    ), audioDuration
     return
 
   stop: () ->
@@ -27,7 +27,7 @@ class Recorder
     ), ((msg) ->
       console.log '[recorder:stop] error', msg
       return
-    ), AUDIO_DURATION
+    ), audioDuration
     return
 
   playback: () ->
@@ -39,7 +39,7 @@ class Recorder
     ), ((msg) ->
       console.log '[recorder:playback] error', msg
       return
-    ), AUDIO_DURATION
+    ), audioDuration
     return
   
   # file handling

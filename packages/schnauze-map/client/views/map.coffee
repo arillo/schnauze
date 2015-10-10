@@ -22,5 +22,13 @@ Template.map.onCreated () ->
       map: map.instance
     }
 
-  Schnauze.EventEmitter.on 'Geolocation:positionChange', (position) ->
-    console.log 'position changed'
+    # Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
+    #   setMapCenter map.instance, marker, position
+
+    Schnauze.Geolocator.getPosition().then (position) ->
+      setMapCenter map.instance, marker, position
+
+setMapCenter: (map, marker, position) ->
+  center = new google.maps.LatLng(position.coords.longitude, position.coords.latitude)
+  map.setCenter center
+  marker.setPosition center
