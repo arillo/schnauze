@@ -37,6 +37,7 @@ Package.onUse(function(api) {
 
 
     // utilities
+    'nooitaf:colors',
     'mrt:q',
     'raix:eventemitter',
     'momentjs:moment',
