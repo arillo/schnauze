@@ -10,7 +10,7 @@ Template.listItem.events
     console.log t.data.audio
     t.data.selectedItem.set t.data.audio._id
     audio = new Audio(t.data.audio.url())
-    audio.volume = 1;
+    audio.volume = 1
     audio.play()
 
 
