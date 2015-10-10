@@ -1,0 +1,10 @@
+//============================================
+// Utilities - Dimensions
+//============================================
+
+// @TODO refactor to mixin
+
+
+@include generate-dimension-helpers(
+  $dimension-utility-config-sm
+);

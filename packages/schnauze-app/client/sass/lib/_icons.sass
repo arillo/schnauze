@@ -1,0 +1,112 @@
+//============================================
+// Icons
+//============================================
+
+// Define default var to prevent a sass error
+$i-map-bg: () !default
+$i-map-inline: () !default
+
+
+// Icon width
+//============================================
+
+@function icon-width($name, $inline: false)
+  $name: $name + "-width"
+  $val-bg: map-get($i-map-bg, $name)
+  $val-inline: map-get($i-map-inline, $name)
+  $val: if($inline, $val-inline, $val-bg)
+
+  @if $val
+    @return $val
+  @else if $val-inline
+    @return $val-inline
+  @else
+    @warn "Icon not defined"
+    @return false
+
+// Alias
+@function iw($name, $inline: false)
+  @return icon-width($name, $inline)
+
+
+// Icon Height
+//============================================
+
+@function icon-height($name, $inline: false)
+  $name: $name + "-height"
+  $val-bg: map-get($i-map-bg, $name)
+  $val-inline: map-get($i-map-inline, $name)
+  $val: if($inline, $val-inline, $val-bg)
+
+  @if $val
+    @return $val
+  @else if $val-inline
+    @return $val-inline
+  @else
+    @warn "Icon not defined"
+    @return false
+
+// Alias
+@function ih($name, $inline: false)
+  @return icon-height($name, $inline)
+
+
+// Icon Position
+//============================================
+
+@function icon-position($name)
+  $name: $name + "-position"
+  $val: map-get($i-map-bg, $name)
+
+  @if $val
+    @return $val
+  @else
+    @warn "Icon not defined"
+    @return false
+
+=icon-position($name)
+  background-position: icon-position($name)
+
+// Alias
+@function ip($name)
+  @return icon-position($name)
+
+=ip($name)
+  +icon-position($name)
+
+
+// Icon Size
+//============================================
+
+=icon-size ($name, $inline: false)
+  +size(icon-width($name, $inline), icon-height($name, $inline))
+
+// Alias
+=is($name, $inline: false)
+  +icon-size($name, $inline)
+
+
+// Scale Icon
+//============================================
+
+=scale-icon ($name, $width, $round: "round")
+  $w: $name + "-width"
+  $w: map-get($i-map-inline, $w)
+  $h: $name + "-height"
+  $h: map-get($i-map-inline, $h)
+
+  $height: ($width / $w) * $h
+
+  @if $round == "round"
+    $height: round($height)
+  @if $round == "ceil"
+    $height: ceil($height)
+  @if $round == "floor"
+    $height: floor($height)
+
+  +size($width, $height)
+
+// Alias
+=iscale ($name, $width, $round: "round")
+  +scale-icon($name, $width)
+

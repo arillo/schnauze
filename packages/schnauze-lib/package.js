@@ -39,11 +39,12 @@ Package.onUse(function(api) {
   api.imply(packages);
 
   api.addFiles([
-    'both/namespace.coffee'
+    'both/namespace.coffee',
   ], ['client', 'server']);
 
-  // api.addFiles([
-  // ], ['client']);
+  api.addFiles([
+    'client/eventemitter.coffee'
+  ], ['client']);
 
 
   // api.addFiles([

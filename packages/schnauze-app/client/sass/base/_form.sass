@@ -1,0 +1,129 @@
+//============================================
+// Form
+//============================================
+
+
+// Basic Reset
+//============================================
+
+input, button, optgroup, select, textarea
+  vertical-align: middle
+  -webkit-appearance: none
+  border-radius: 0
+  border: 0
+
+  &:active,
+  &:focus
+    outline: none
+
+input[type="checkbox"]
+  -webkit-appearance: checkbox
+  cursor: pointer
+
+input[type="radio"]
+  -webkit-appearance: radio
+  cursor: pointer
+
+form
+  margin: 0
+  position: relative
+
+fieldset
+  margin: 0
+  padding: 0
+  border: none
+
+label
+  display: inline-block
+
+  &[for]
+    cursor: pointer
+
+input::-ms-clear, input::-ms-reveal
+  display:none
+
+
+// Inputs
+//============================================
+
+textarea, select, input[type="password"], input[type="email"], input[type="text"]
+  outline: 0
+  width: 100%
+
+  &:focus
+    outline: 0
+
+  &.disabled, &[disabled]
+    cursor: default
+
+
+// // Inputs - Range
+// //============================================
+
+
+// input[type=range]
+//   width: 100%
+//   padding: 18px 5px
+//   background: transparent
+
+// input[type=range]::-webkit-slider-thumb
+//   -webkit-appearance: none
+
+// input[type=range]:focus
+//   outline: 0
+
+// // Thumb
+// =range-thumb($margin: false)
+//   +size(50px)
+//   border: 0
+//   border-radius: 50%
+//   background: white
+//   cursor: pointer
+//   // box-shadow: 0 1px 4px rgba(black, .2)
+
+//   @if $margin
+//     margin-top: -24px
+
+
+// input[type=range]::-webkit-slider-thumb
+//   +range-thumb(true)
+// input[type=range]::-moz-range-thumb
+//   +range-thumb
+// input[type=range]::-ms-thumb
+//   +range-thumb
+
+
+// // Track
+// =range-track($general: true, $ms: false)
+//   @if $general
+//     width: 100%
+//     height: 3px
+//     cursor: pointer
+//     animate: 0.2s
+
+//   @if $ms
+//     height: 2px
+//     border-color: transparent
+//     border-width: 16px 0
+//     color: transparent
+
+//     @if $general
+//       background: transparent
+//     @else
+//       background: white
+
+//   @else
+//     background: white
+//     border-radius: 1px
+//     border: 0
+
+// input[type=range]::-webkit-slider-runnable-track
+//   +range-track
+// input[type=range]::-moz-range-track
+//   +range-track
+// input[type=range]::-ms-track
+//   +range-track(true, true)
+// input[type=range]::-ms-fill-lower
+//   +range-track(false, true)
+// input[type=range]::-ms-fill-upper
+//   +range-track(false, true)
