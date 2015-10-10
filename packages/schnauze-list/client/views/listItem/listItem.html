@@ -1,3 +1,33 @@
 <template name="listItem">
-  <li><a href="{{url}}">{{name}}</a></li>
+  <li class="list_item">
+    <a class="list_item_trigger l-centerRow">
+      <div class="list_item_btn list_item_btn-play">
+        <svg class="i i-play"><use xlink:href="#play"></use></svg>
+      </div>
+      <div class="list_item_btn list_item_btn-pause">
+        <svg class="i i-pause"><use xlink:href="#pause"></use></svg>
+      </div>
+      <div class="l-item-strech">
+        <svg class="i i-avatar"><use xlink:href="#avatar"></use></svg><span class="list_item_data_name">Anonimous</span>
+        <p>5s - 3 Oct. 4.20</p>
+      </div>
+      <div class="list_item_pulse">
+        <svg class="i i-pulse"><use xlink:href="#pulse"></use></svg>
+      </div>
+    </a>
+    <div class="list_item_actions">
+      <div class="list_item_actions_wave l-centerRow">
+        <div class="l-item-strech u-ta-center">
+          <p>24x</p>
+          <span>playe</span>
+        </div>
+        <div  class="l-item-strech u-ta-center">
+          <p>38746s</p>
+          <span>expire time</span>
+        </div>
+      </div>
+      <p class="list_item_actions_extend">Extend life</p>
+      <p class="list_item_actions_reply">Reply</p>
+    </div>
+  </li>
 </template>
