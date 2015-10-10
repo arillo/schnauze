@@ -2,7 +2,10 @@ AUDIO_DURATION = 30
 
 class Recorder
 
+  desktop: false
+
   record: () ->
+    return if @desktop
     console.log 'start recording'
     window.plugins.audioRecorderAPI.record ((msg) ->
       console.log '[recorder:record] success', msg
@@ -14,8 +17,9 @@ class Recorder
     return
 
   stop: () ->
+    return if @desktop
+
     self = @
-    
     window.plugins.audioRecorderAPI.stop ((msg) ->
       console.log '[recorder:stop] success', msg
       window.resolveLocalFileSystemURL 'file://' + msg, self.onResolveLocalFileSystemSuccess, self.onResolveLocalFileSystemError
@@ -27,6 +31,8 @@ class Recorder
     return
 
   playback: () ->
+    return if @desktop
+
     window.plugins.audioRecorderAPI.playback ((msg) ->
       console.log '[recorder:playback] success', msg
       return
@@ -54,3 +60,4 @@ class Recorder
     return
 
 Schnauze.Recorder = new Recorder
+Schnauze.Recorder.desktop = true unless Meteor.isCordova

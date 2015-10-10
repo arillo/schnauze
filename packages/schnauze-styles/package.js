@@ -49,6 +49,7 @@ Package.onUse(function(api) {
     'client/sass/lib/_truncate.sass',
 
     'client/sass/module/_map.sass',
+    'client/sass/module/_rec-btn.sass',
 
     'client/sass/utilities/_animation.sass',
     'client/sass/utilities/_cursor.sass',
