@@ -1,0 +1,113 @@
+// Local vars
+
+$height-list-item : 64px
+$height-list-actions: 120px
+
+// List
+// ==================================
+
+.list
+  +pos(50% 0 0, top right left)
+  z-index: 10
+  background: $blue-dark
+  padding: 20px
+
+// ==================================
+// END ->  List
+
+
+// List Item
+// ==================================
+
+.list_item
+  border-radius: 5px
+  background: $blue
+  color: white
+  font-size: $fs
+  margin-bottom: 20px
+  position: relative
+
+// ==================================
+// END -> List Item
+
+
+// List Item Trigger
+// ==================================
+
+.list_item_trigger
+  height: $height-list-item
+
+.list_item_btn
+  padding: 0 20px
+  width: 60px
+
+.list_item_btn-play
+  height: ih(i-play)
+
+.list_item_btn-pause
+  height: ih(i-pause)
+  display: none
+
+.list_item_data_name
+  vertical-align: top
+  margin-left: 5px
+
+.list_item_pulse
+  padding: 0 20px
+
+// ==================================
+// END -> List Item Trigger
+
+
+// List Item Actions and waveform toggler
+// ==================================
+
+.list_item.is-playing
+  .list_item_btn-pause
+    display: block
+  .list_item_btn-play
+    display: none
+  .list_item_actions
+    height: $height-list-actions
+
+
+// List Item Actions and waveform
+// ==================================
+
+// Wrap
+.list_item_actions
+  height: 0
+  transition: height .5s
+  overflow: hidden
+  background: $teal
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
+
+// Wave
+.list_item_actions_wave
+  height: 80px
+  p
+    font-size: $fs-lg
+    font-weight: bold
+
+
+// Buttons
+.list_item_actions_extend,
+.list_item_actions_reply
+  display: block
+  width: 50%
+  height: 40px
+  float: left
+  text-align: center
+  line-height: 40px
+
+.list_item_actions_extend
+  border-bottom-left-radius: 5px
+
+
+.list_item_actions_reply
+  background: $primary
+  border-bottom-right-radius: 5px
+
+// ==================================
+// List Item Actions and waveform
