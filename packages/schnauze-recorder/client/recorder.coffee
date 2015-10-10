@@ -12,24 +12,13 @@ class Recorder
       return
     ), AUDIO_DURATION
     return
-  onResolveLocalFileSystemSuccess: (res) ->
-    console.log '[recorder:resolveLocalFileSystemURL] success', msg
-    res.file ((file) ->
-      Schnauze.EventEmitter.emit 'Recorder:stopRecording',
-        file: file
-      console.log '[recorder:file] success', file
-      return
-    ), (err) ->
-      console.log '[recorder:file] err', err
-      return
-    return
-  onResolveLocalFileSystemError: (err) ->
-    console.log '[recorder:resolveLocalFileSystemURL] error', err
-    return
+
   stop: () ->
+    self = @
+    
     window.plugins.audioRecorderAPI.stop ((msg) ->
       console.log '[recorder:stop] success', msg
-      window.resolveLocalFileSystemURL 'file://' + msg, @onResolveLocalFileSystemSuccess, @onResolveLocalFileSystemError
+      window.resolveLocalFileSystemURL 'file://' + msg, self.onResolveLocalFileSystemSuccess, self.onResolveLocalFileSystemError
       return
     ), ((msg) ->
       console.log '[recorder:stop] error', msg
@@ -46,8 +35,22 @@ class Recorder
       return
     ), AUDIO_DURATION
     return
+  
+  # file handling
+  onResolveLocalFileSystemSuccess: (res) ->
+    console.log '[recorder:resolveLocalFileSystemURL] success', res
+    res.file ((file) ->
+      Schnauze.EventEmitter.emit 'Recorder:stopRecording',
+        file: file
+      console.log '[recorder:file] success', file
+      return
+    ), (err) ->
+      console.log '[recorder:file] err', err
+      return
+    return
 
-Schnauze.EventEmitter.on 'Recorder:startRecording', ->
-  Schnauze.Recorder.record()
+  onResolveLocalFileSystemError: (err) ->
+    console.log '[recorder:resolveLocalFileSystemURL] error', err
+    return
 
 Schnauze.Recorder = new Recorder
