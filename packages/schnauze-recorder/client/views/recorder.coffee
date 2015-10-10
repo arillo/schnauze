@@ -1,7 +1,7 @@
 Template.recorder.onCreated () ->
   @isRecording = new ReactiveVar false
   @countdownTimer = new Schnauze.Utils.CountdownTimer
-    duration: Schnauze.Settings.Recorder.audioDuration
+    duration: Schnauze.Settings.recorder.audioDurationSeconds
 
 Template.recorder.helpers
   isRecording: () ->

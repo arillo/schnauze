@@ -6,6 +6,19 @@
     "public": {
         "ga": {
             "account":""
+        },
+        "app": {
+          "recorder": {
+            "audioDurationSeconds": 30
+          },
+          "map": {
+            "radiusMeters": 1000
+          },
+          "geolocation": {
+            "maximumAge": 3000,
+            "timeout": 5000,
+            "enableHighAccuracy": true
+          }
         }
     }
 }

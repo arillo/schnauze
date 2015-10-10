@@ -1,8 +1,5 @@
 class Geolocator
-  settings:
-    maximumAge: 3000
-    timeout: 5000
-    enableHighAccuracy: true
+  settings: Schnauze.Settings.geolocation
 
   getPosition: ->
     deferred = Q.defer()
