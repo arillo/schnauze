@@ -18,9 +18,13 @@
   &:not(:last-child)
     margin-bottom: $space-oneAndHalf
 
+
   &.is-playing
     box-shadow: 0 5px 14px 1px rgba(black, .25)
     margin: $space-double (-$space)
+
+  &.is-playing:first-child
+    margin: 0 (-$space) $space-double
 
 
 // Trigger
