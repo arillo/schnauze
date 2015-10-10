@@ -5,11 +5,10 @@ class Geolocator
     deferred = Q.defer()
 
     successCallback = (position)->
-        latitude = position.coords.latitude
-        longitude = position.coords.longitude
-        deferred.resolve position
+      deferred.resolve position
 
-    errorCallback = (error)-> deferred.reject(error)
+    errorCallback = (error)->
+      deferred.reject error
 
     navigator.geolocation.getCurrentPosition successCallback, errorCallback, @settings
 
@@ -30,4 +29,4 @@ geolocator.getPosition()
   .then ->
     geolocator.watchPosition()
   .catch ->
-    alert 'Error: Please enable geolocation'
+    console.log 'Error: Please enable geolocation'
