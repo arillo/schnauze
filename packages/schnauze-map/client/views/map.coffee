@@ -33,11 +33,15 @@ Template.map.onCreated () ->
 
     radius.bindTo 'center', marker, 'position'
 
+    Schnauze.Collections.AudioSnippets.find().observe
+      changed: ->
+        clearMarkers markers
+        renderMarkers map.instance, markers, 
+        console.log markers
+
     Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
       center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       marker.setPosition center
-      clearMarkers markers
-      renderMarkers map.instance, markers, Schnauze.Collections.AudioSnippets.find()
 
     centerMap = ->
       Schnauze.Geolocator.getPosition()
