@@ -10,7 +10,7 @@ Template.map.helpers
         center: new google.maps.LatLng(52.5123008, 13.4460634)
         zoom: 8
         disableDefaultUI: true
-        styles: Schauze.Utils.MapStyles
+        styles: Schnauze.Utils.MapStyles
       }
 
 Template.map.onCreated () ->
@@ -21,3 +21,6 @@ Template.map.onCreated () ->
       position: map.options.center
       map: map.instance
     }
+
+  Schnauze.EventEmitter.on 'Geolocation:positionChange', (position) ->
+    console.log 'position changed'

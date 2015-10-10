@@ -20,10 +20,10 @@ class Geolocator
 
   watchPosition: ->
     successCallback = (position) ->
-      Schnauze.EventEmitter.emit 'Geolocation:locationChange', position
+      Schnauze.EventEmitter.emit 'Geolocation:positionChange', position
 
     errorCallback = (error) ->
-      Schnauze.EventEmitter.emit 'Geolocation:locationChangeError', error
+      Schnauze.EventEmitter.emit 'Geolocation:positionChangeError', error
 
     navigator.geolocation.watchPosition successCallback, errorCallback, @settings
 
