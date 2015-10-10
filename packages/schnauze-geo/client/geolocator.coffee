@@ -30,4 +30,4 @@ geolocator.getPosition()
   .then ->
     geolocator.watchPosition()
   .catch ->
-    alert 'Error: Please enable geolocation'
+    console.log 'Error: Please enable geolocation'
