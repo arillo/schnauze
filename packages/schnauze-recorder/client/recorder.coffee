@@ -1,11 +1,9 @@
 AUDIO_DURATION = 30
 
 class Recorder
-
   record: () ->
-    console.log 'start recording'
+    console.log '[recorder:record] start'
     return false
-    
     window.plugins.audioRecorderAPI.record ((msg) ->
       console.log '[recorder:record] success', msg
       return
@@ -52,5 +50,11 @@ class Recorder
 
 Schnauze.EventEmitter.on 'Recorder:startRecording', ->
   Schnauze.Recorder.record()
+  Session.set 'Schnauze.Recorder:isRecording', on
+
+Schnauze.EventEmitter.on 'Recorder:stopRecording', ->
+  Schnauze.Recorder.stop()
+  Session.set 'Schnauze.Recorder:isRecording', off
+
 
 Schnauze.Recorder = new Recorder
