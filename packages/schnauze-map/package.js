@@ -8,13 +8,14 @@ Package.describe({
 Package.onUse(function(api) {
 
   api.versionsFrom("METEOR@1.0");
-  
+
   var packages = [
     'schnauze:lib',
+    'schnauze:styles'
   ];
 
   api.use(packages);
-  
+
   api.imply(packages);
 
   api.addFiles([

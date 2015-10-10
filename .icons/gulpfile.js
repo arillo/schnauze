@@ -20,8 +20,8 @@ var svgGlob = '**/*.svg';
 var baseDirInline = './src/img-inline';
 var outDirInline  = './dist';
 
-var sassDest = './../packages/schnauze-app/client/sass';
-var htmlDest = './../packages/schnauze-app/client/views/includes';
+var sassDest = './../packages/schnauze-styles/client/sass';
+var htmlDest = './../packages/schnauze-styles/client/views/sprite';
 
 var configInline = {
   'mode': {
