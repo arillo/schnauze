@@ -1,0 +1,116 @@
+//============================================
+// Vars
+//============================================
+
+
+// Colors
+//============================================
+
+// $primary:       #1a61d3;
+$primary:       #d32f2f;
+
+$black:         #111;
+
+$blue:          #2a5a72;
+$blue-dark:     #193341;
+
+$teal:          #29768a;
+$teal-dark:     #205e6e;
+
+// Alias
+$color-text:     white;
+
+// Social
+$color-facebook: #3b5998;
+$color-github: #888;
+$color-google: #dd4b39;
+$color-twitter: #55acee;
+
+
+// Dimensions
+//============================================
+
+$space: 18px;
+$space-quarter: ($space * .25);
+$space-half: ($space * .5);
+$space-threeQuarter: ($space * .75);
+$space-oneAndHalf: ($space * 1.5);
+$space-double: ($space * 2);
+
+// Key elements
+// e.g.: $height-header: 45px;
+
+// Layout
+$l-max-width: 1024px;
+
+
+// Type
+//============================================
+
+$font: "Avenir Next", sans-serif;
+$font-mono: monospace, monospace;
+
+// NEW
+$fs: 14px;
+$fs-sm: 10px;
+$fs-lg: 24px;
+
+$lh: decimal-ceil(($space / $fs), 2); // 1.35 === 20px
+
+
+// Breakpoints
+//============================================
+
+$bp: "(min-width: 800px)";
+$bp-lg: "(min-width: #{$l-max-width + 30px})";
+$bp-lg-below: "(max-width: #{$l-max-width + 30px})";
+
+$bp-land: "(orientation: landscape)";
+$bp-port: "(orientation: portrait)";
+
+$bp-h-sm: "(min-height: 400px)";
+$bp-h-sm-below: "(max-height: 400px)";
+
+
+// Images
+//============================================
+
+
+
+
+
+// Z Index Matrix
+//============================================
+
+$z-rating: 90;
+$z-poster: 80;
+
+
+// Dimension Utility
+//============================================
+
+$dimension-utility-sizes: (
+  "1": 1px,
+  "2": 2px,
+  "3": 3px,
+  "4": 4px,
+  "5": 5px,
+  "quarter": $space * .25,
+  "third": $space / 3,
+  "half": $space-half,
+  "threeQuarter": $space * .75,
+  "": $space,
+  "oneAndHalf": $space * 1.5,
+  "double": $space * 2,
+  "none": 0
+);
+
+$dimension-utility-config-sm: (
+  "name": "",
+  "pull": true,
+  "push": true,
+  "padd": true,
+  "bp": false,
+
+  "sizes": $dimension-utility-sizes
+);
