@@ -22,6 +22,8 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/views/map.html',
+    'client/views/map.coffee'
   ], ['client']);
 
 
