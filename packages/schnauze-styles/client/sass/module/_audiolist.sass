@@ -1,102 +1,71 @@
 // Local vars
 
-$height-list-item : 64px
-$height-list-actions: 120px
 
-// List
-// ==================================
-
-.list
-  background: $blue-dark
-  padding: 20px
 
 
 // List Item
 // ==================================
 
-.list_item
+.listItem
   border-radius: 5px
   background: $blue
   color: white
-  font-size: $fs
-  margin-bottom: 20px
+  margin-bottom: $space
+  position: relative
+  overflow: hidden
+
+
+// Trigger
+// ==================================
+
+.listItem_trigger
+  height: $height-listItem-trigger
+  text-align: left // @TODO maybe make this a default for <button>
+
+
+// Trigger - Play
+.listItem_play
+  +size($height-listItem-trigger)
   position: relative
 
+.listItem_icon
+  +center-transform
+  transition: opacity .1s $anim-cubic
 
-// List Item Trigger
+  &-pause
+    opacity: 0
+
+  .is-playing &
+
+    &-play
+      opacity: 0
+
+    &-pause
+      opacity: 1
+
+// Trigger - Pulse
+.listItem_pulse
+  padding: 0 $space
+
+
+// Info
 // ==================================
 
-.list_item_trigger
-  height: $height-list-item
-
-.list_item_btn
-  padding: 0 20px
-  width: 60px
-
-.list_item_btn-play
-  height: ih(i-play)
-
-.list_item_btn-pause
-  height: ih(i-pause)
-  display: none
-
-.list_item_data_name
-  vertical-align: top
-  margin-left: 5px
-
-.list_item_pulse
-  padding: 0 20px
-
-
-// List Item Actions and waveform toggler
-// ==================================
-
-.list_item.is-playing
-  .list_item_btn-pause
-    display: block
-  .list_item_btn-play
-    display: none
-  .list_item_actions
-    height: $height-list-actions
-
-
-// List Item Actions and waveform
-// ==================================
-
-// Wrap
-.list_item_actions
+.listItem_info
   height: 0
-  transition: height .5s
+  transition: height .5s $anim-cubic
   overflow: hidden
   background: $teal
-  border-bottom-right-radius: 5px
-  border-bottom-left-radius: 5px
+
+  .is-playing &
+    height: $height-listItem-info
 
 // Wave
-.list_item_actions_wave
+.listItem_wave
   height: 80px
-  p
-    font-size: $fs-lg
-    font-weight: bold
-
 
 // Buttons
-.list_item_actions_extend,
-.list_item_actions_reply
-  display: block
-  width: 50%
-  height: 40px
-  float: left
-  text-align: center
+.listItem_actions
   line-height: 40px
-
-.list_item_actions_extend
-  border-bottom-left-radius: 5px
-
-
-.list_item_actions_reply
   background: $primary
-  border-bottom-right-radius: 5px
-
-// ==================================
-// List Item Actions and waveform
+  text-align: center

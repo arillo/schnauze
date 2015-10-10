@@ -1,15 +1,16 @@
 <template name="menu">
   <div class="menu l-row">
-    <button class="menu_action menu_action-menu js-toggle-layout">
-      <svg class="i i-menu i-fill-white"><use xlink:href="#menu"></use></svg>
+    <button class="menu_action menu_action-location js-locate-on-map">
+      <svg class="i i-location i-fill-white"><use xlink:href="#location"></use></svg>
     </button>
 
     <div class="menu_record l-item-strech">
       {{> recorder}}
     </div>
 
-    <button class="menu_action menu_action-location js-locate-on-map">
-      <svg class="i i-location i-fill-white"><use xlink:href="#location"></use></svg>
+    <button class="menu_action menu_action-menu js-toggle-layout">
+      <svg class="i i-menu i-fill-white"><use xlink:href="#menu"></use></svg>
     </button>
+
   </div>
 </template>
