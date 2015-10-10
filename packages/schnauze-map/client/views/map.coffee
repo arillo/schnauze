@@ -35,15 +35,25 @@ Template.map.onCreated () ->
       center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       marker.setPosition center
 
-    window.map = map.instance
-
     centerMap = ->
       Schnauze.Geolocator.getPosition()
         .then (position) ->
-          console.log position
           center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
           map.instance.setCenter center
           marker.setPosition center
+          
+          mapBounds = map.instance.getBounds()
+          bottomLeft = mapBounds.getSouthWest()
+          topRight = mapBounds.getNorthEast()
+          
+          mapBoundsSession = 
+            bottomLeft: [bottomLeft.lng(), bottomLeft.lat()]
+            topRight: [topRight.lng(), topRight.lat()]
+          
+          console.log mapBoundsSession
+
+          Session.set 'Schnauze.Map:bounds', mapBoundsSession
+
         .catch (error) ->
           console.log 'Error - centerMap', error
 

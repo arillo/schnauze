@@ -1,5 +1,4 @@
 Template.list.onCreated () ->
-  Meteor.subscribe 'audioSnippets'
   self = @
   self.selectedItem = new ReactiveVar 0
 
