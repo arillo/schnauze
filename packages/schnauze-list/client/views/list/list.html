@@ -1,7 +1,7 @@
 <template name="list">
     <ul class="list">
-    {{#each snippets}}
-        {{> listItem}}
-    {{/each}}
+        {{#each snippets}}
+            {{> listItem audio=this selectedItem=selectedItem}}
+        {{/each}}
     </ul>
 </template>

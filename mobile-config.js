@@ -83,8 +83,9 @@ App.setPreference('HideKeyboardFormAccessoryBar', true);
 App.setPreference('KeyboardShrinksView', true);
 
 
+*/
+
 // org.apache.cordova.statusbar
 App.setPreference('StatusBarOverlaysWebView', 'true');
-App.setPreference('StatusBarBackgroundColor', '#1a1a1a');
-App.setPreference('StatusBarStyle', 'default');
-*/
+// App.setPreference('StatusBarBackgroundColor', '#1a1a1a');
+App.setPreference('StatusBarStyle', 'lightcontent');

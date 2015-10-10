@@ -1,6 +1,16 @@
 Template.listItem.onCreated () ->
 
 Template.listItem.helpers
+  isSelected: () ->
+    inst = Template.instance()
+    console.log inst
+    inst.data.selectedItem.get() is inst.data.audio._id
+
+Template.listItem.events
+  'click .js-listItem': (e, t) ->
+    t.data.selectedItem.set t.data.audio._id
+
+
   player: () ->
     #console.log @_id
     #console.log WaveSurfer
@@ -12,13 +22,3 @@ Template.listItem.helpers
       waveColor: '#A8DBA8',
       progressColor: '#3B8686'
     ###
-
-Template.listItem.events
-  'click .js-listItem': (e, t) ->
-    $el = $(e.target).closest('.js-listItem').parent()
-    e.stopImmediatePropagation()
-    if $el.hasClass 'is-playing'
-      $el.removeClass 'is-playing'
-    else
-      $el.addClass 'is-playing'
-
