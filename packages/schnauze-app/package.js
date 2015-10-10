@@ -11,6 +11,7 @@ Package.onUse(function(api) {
 
   var packages = [
     'schnauze:lib',
+    'schnauze:recorder'
   ];
 
   api.use(packages);

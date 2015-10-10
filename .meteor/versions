@@ -59,6 +59,7 @@ mobile-status-bar@1.0.6
 mongo@1.1.2
 mongo-id@1.0.1
 mongo-livedata@1.0.9
+mrt:q@0.9.7
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
@@ -72,6 +73,7 @@ retry@1.0.4
 routepolicy@1.0.6
 schnauze:app@0.0.1
 schnauze:lib@0.0.1
+schnauze:recorder@0.0.1
 session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7

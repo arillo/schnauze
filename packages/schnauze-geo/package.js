@@ -1,6 +1,6 @@
 Package.describe({
-  name: "schnauze:recorder",
-  summary: "Schnauze recorder package",
+  name: "schnauze:geo",
+  summary: "Schnauze geo package",
   version: "0.0.1",
   git: ""
 });
@@ -21,7 +21,6 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/recorder.coffee'
   ], ['client']);
 
 
