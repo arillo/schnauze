@@ -1,3 +1,10 @@
+Template.Recorder.helpers
+  isRecording: ->
+    Session.get('Schnauze.Recorder:isRecording')
+
+
 Template.Recorder.events
-  'click .js-record': (e, t) ->
+  'touchstart .js-recorder': (e, t) ->
+    Schnauze.EventEmitter.emit 'Recorder:startRecording'
+  'touchend .js-recorder': (e, t) ->
     Schnauze.EventEmitter.emit 'Recorder:startRecording'
