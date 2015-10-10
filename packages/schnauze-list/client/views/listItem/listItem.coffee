@@ -12,7 +12,7 @@ Template.listItem.events
     audio = new Audio(t.data.audio.url())
     audio.volume = 1;
     audio.play()
-    
+
 
 
   # player: () ->

@@ -1,22 +1,30 @@
-// Local vars
-
-
-
-
+//============================================
 // List Item
-// ==================================
+//============================================
+
+
+// Wrap
+//============================================
 
 .listItem
   border-radius: 5px
   background: $blue
   color: white
-  margin-bottom: $space
   position: relative
   overflow: hidden
+  transition: margin .2s $anim-cubic, box-shadow .2s $anim-cubic
+  box-shadow: 0 2px 4px rgba(black, .25)
+
+  &:not(:last-child)
+    margin-bottom: $space-oneAndHalf
+
+  &.is-playing
+    box-shadow: 0 5px 14px 1px rgba(black, .25)
+    margin: $space-double (-$space)
 
 
 // Trigger
-// ==================================
+//============================================
 
 .listItem_trigger
   height: $height-listItem-trigger
@@ -49,11 +57,11 @@
 
 
 // Info
-// ==================================
+//============================================
 
 .listItem_info
   height: 0
-  transition: height .5s $anim-cubic
+  transition: height .2s $anim-cubic
   overflow: hidden
   background: $teal
 

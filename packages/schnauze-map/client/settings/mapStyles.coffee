@@ -68,7 +68,7 @@ Schnauze.Utils.MapStyles = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#95b9c4"
+        "color": "#8aabb5"
       }
     ]
   },
