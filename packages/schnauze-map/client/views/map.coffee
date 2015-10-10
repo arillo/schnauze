@@ -1,5 +1,5 @@
 Meteor.startup () ->
-  GoogleMaps.load()
+  GoogleMaps.load({key: "AIzaSyAwrfqcJ8y-S5uPZ4dwtTGd8uTCxp-CEeI"})
 
 Template.map.helpers
   mapOptions: () ->
