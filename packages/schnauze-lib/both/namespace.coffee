@@ -6,3 +6,4 @@ Schnauze.Schemas = {}
 Schnauze.Collections = {}
 Schnauze.Utils = {}
 Schnauze.Routes = {}
+Schnauze.Settings = {}
