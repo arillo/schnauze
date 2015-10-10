@@ -37,6 +37,7 @@ Package.onUse(function(api) {
 
 
     // utilities
+    'reactive-var',
     'nooitaf:colors',
     'mrt:q',
     'raix:eventemitter',
