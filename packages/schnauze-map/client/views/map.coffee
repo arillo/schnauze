@@ -47,4 +47,7 @@ Template.map.onCreated () ->
     # center map once on startup
     centerMap()
 
+    Schnauze.EventEmitter.on 'Menu:toggleList', ->
+      setTimeout centerMap, 200
+
     Schnauze.EventEmitter.on 'Menu:centerMap', centerMap

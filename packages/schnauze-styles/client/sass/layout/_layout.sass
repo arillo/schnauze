@@ -13,11 +13,16 @@
   overflow: hidden
 
 .l-top
-  height: 50vh
+  height: calc(100vh - #{$height-menu - 1px})
   position: relative
+  overflow: hidden
+  transition: height .2s $anim-cubic
+
+  &.is-showingList
+    height: 40vh
 
 .l-bottom
-  height: 50vh
+  height: 60vh
   position: relative
 
 
