@@ -45,11 +45,10 @@
 
 .recbtn_time
   +center-transform()
+  transition: opacity .2s $anim-cubic
   font-weight: bold
   opacity: 0
-  transition: opacity .5s $anim-cubic, font-size .5s $anim-cubic
+  font-size: 14px
 
   .is-recording &
-    font-size: 42px
     opacity: 1
-    height: 45px
