@@ -33,7 +33,7 @@ Package.onUse(function(api) {
     'mrt:q',
     'raix:eventemitter',
     'momentjs:moment',
-    'frozeman:reactive-timer'
+    'flyandi:reactive-countdown'
   ];
 
   api.use(packages);
