@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="24px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Pause button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Map-List-View-Play-Item-show-Replies" sketch:type="MSArtboardGroup" transform="translate(-27.000000, -379.000000)">
+            <g id="Open-audio-snippet" sketch:type="MSLayerGroup" transform="translate(10.000000, 359.000000)">
+                <g id="Pause-button" transform="translate(3.000000, 8.000000)" sketch:type="MSShapeGroup">
+                    <path d="M18.9940809,35.9166667 C20.1019194,35.9166667 21,35.0227551 21,33.9186817 L21,13.997985 C21,12.8945283 20.1134452,12 18.9940809,12 L16.0059191,12 C14.8980806,12 14,12.8939116 14,13.997985 L14,33.9186817 C14,35.0221383 14.8865548,35.9166667 16.0059191,35.9166667 L18.9940809,35.9166667 Z M27,33.9950534 C27,35.1023548 27.8865548,36 29.0059191,36 L31.9940809,36 C33.1019194,36 34,35.1029738 34,33.9950534 L34,14.0049466 C34,12.8976452 33.1134452,12 31.9940809,12 L29.0059191,12 C27.8980806,12 27,12.8970262 27,14.0049466 L27,33.9950534 Z" id="Shape" fill="#FFFFFF"></path>
+                    <path d="M0,0 L48,0 L48,48 L0,48 L0,0 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
