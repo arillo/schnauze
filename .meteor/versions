@@ -40,6 +40,7 @@ ecmascript-collections@0.1.6
 ejson@1.0.7
 fastclick@1.0.7
 fourseven:scss@3.2.0
+frozeman:reactive-timer@0.1.7
 geojson-utils@1.0.4
 hot-code-push@1.0.0
 html-tools@1.0.5
@@ -57,6 +58,7 @@ minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1
 mobile-status-bar@1.0.6
+momentjs:moment@2.8.4
 mongo@1.1.2
 mongo-id@1.0.1
 mongo-livedata@1.0.9
@@ -75,7 +77,9 @@ routepolicy@1.0.6
 schnauze:app@0.0.1
 schnauze:geo@0.0.1
 schnauze:lib@0.0.1
+schnauze:map@0.0.1
 schnauze:recorder@0.0.1
+schnauze:styles@0.0.1
 session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7

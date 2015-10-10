@@ -31,7 +31,9 @@ Package.onUse(function(api) {
 
     // utilities
     'mrt:q',
-    'raix:eventemitter'
+    'raix:eventemitter',
+    'momentjs:moment',
+    'frozeman:reactive-timer'
   ];
 
   api.use(packages);
