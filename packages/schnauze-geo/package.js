@@ -10,7 +10,8 @@ Package.onUse(function(api) {
   api.versionsFrom("METEOR@1.0");
   
   var packages = [
-    'schnauze:lib'
+    'schnauze:lib',
+    'mrt:geolocation'
   ];
 
   api.use(packages);

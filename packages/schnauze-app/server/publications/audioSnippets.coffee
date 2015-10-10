@@ -1,3 +1,3 @@
-Meteor.publish "audioSnippets", () ->
-    console.log 'schnauze:app'.yellow, '[publication] audioSnippets'.blue
-    Schnauze.Collections.AudioSnippets.find({})
+Meteor.publish 'audioSnippets', () ->
+  console.log 'schnauze:app'.yellow, '[publication] audioSnippets'.blue
+  Schnauze.Collections.AudioSnippets.find({})
