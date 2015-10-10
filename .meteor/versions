@@ -40,8 +40,8 @@ ecmascript@0.1.5
 ecmascript-collections@0.1.6
 ejson@1.0.7
 fastclick@1.0.7
+flyandi:reactive-countdown@0.0.3
 fourseven:scss@3.2.0
-frozeman:reactive-timer@0.1.7
 geojson-utils@1.0.4
 hot-code-push@1.0.0
 html-tools@1.0.5
