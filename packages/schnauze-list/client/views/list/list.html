@@ -1,7 +1,7 @@
 <template name="list">
     <ul>
     {{#each snippets}}
-        <li><a href="{{url}}">{{name}}</a></li>
+        {{> listItem}}
     {{/each}}
     </ul>
 </template>
