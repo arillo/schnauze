@@ -7,7 +7,7 @@
 //============================================
 
 .recbtn
-  +size(76px)
+  +size($width-recBtn)
   +pos(50% 18px, left bottom)
   transform: translate(-50%, 0)
   color: white
@@ -21,13 +21,14 @@
 //============================================
 
 .recbtn_bg
-  +size(76px)
+  +size($width-recBtn)
   +pos(50% 0, left bottom)
   margin-left: -38px
   border-radius: 50%
   background: $primary
   transition: transform .5s $anim-cubic
   transform-origin: 50% bottom
+  box-shadow: 0 3px 10px rgba(black, .2)
 
   .is-recording &
     transform: scale(3.05)
@@ -45,7 +46,7 @@
 
 .recbtn_time
   +center-transform()
-  transition: opacity .2s $anim-cubic
+  transition: opacity .2s
   font-weight: bold
   opacity: 0
   font-size: 14px

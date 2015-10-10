@@ -13,7 +13,7 @@
   overflow: hidden
 
 .l-top
-  height: calc(100vh - #{$height-menu - 1px})
+  height: calc(100vh - #{$height-menu - $height-menu-border})
   position: relative
   overflow: hidden
   transition: height .2s $anim-cubic
@@ -24,6 +24,7 @@
 .l-bottom
   height: 60vh
   position: relative
+  box-shadow: 0 -3px 12px rgba(black, .2)
 
 
 // Flex-box
@@ -56,6 +57,9 @@
 .l-bottomRow
   display: flex
   align-items: flex-end
+
+.l-row-full
+  width: 100%
 
 // Items
 .l-item-strech

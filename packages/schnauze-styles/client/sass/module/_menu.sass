@@ -9,19 +9,20 @@
 .menu
   height: $height-menu
   background-color: $blue-dark
-  border-bottom: 1px solid $blue
+  border-bottom: $height-menu-border solid $blue
+  display: flex
 
 
 // Actions
 //============================================
 
 .menu_action
-  width: 30%
+  flex: 1
 
 
 // Record
 //============================================
 
 .menu_record
-  width: 40%
+  flex: 0 0 $width-recBtn
   position: relative
