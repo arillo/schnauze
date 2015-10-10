@@ -34,7 +34,8 @@ Package.onUse(function(api) {
     'client/views/mainLayout/mainLayout.coffee',
     'client/app.html',
     'client/app.coffee',
-    'client/audioSnippets.coffee'
+    'client/audioSnippets.coffee',
+    'client/utils.coffee'
   ], ['client']);
 
 
