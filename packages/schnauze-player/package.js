@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   api.imply(packages);
 
   api.addFiles([
-    'lib/wavesurfer/wavesurfer.js'
+    'lib/wavesurfer/wavesurfer.js',
+    'player.coffee'
   ], ['client']);
 });
