@@ -51,7 +51,7 @@ reactive-var@1.0.6
 reload@1.1.4
 retry@1.0.4
 routepolicy@1.0.6
-schnauze:core@0.0.1
+schnauze:app@0.0.1
 schnauze:lib@0.0.1
 session@1.1.1
 spacebars@1.0.7

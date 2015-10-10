@@ -1,6 +1,6 @@
 Package.describe({
-  name: "schnauze:core",
-  summary: "Schnauze core package",
+  name: "schnauze:app",
+  summary: "Schnauze app package",
   version: "0.0.1",
   git: ""
 });
