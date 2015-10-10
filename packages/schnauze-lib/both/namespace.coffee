@@ -6,4 +6,4 @@ Schnauze.Schemas = {}
 Schnauze.Collections = {}
 Schnauze.Utils = {}
 Schnauze.Routes = {}
-Schnauze.Settings = {}
+Schnauze.Settings = Meteor.settings.public.app

@@ -1,4 +1,4 @@
-audioDuration = Schnauze.Settings.Recorder.audioDuration
+audioDuration = Schnauze.Settings.recorder.audioDurationSeconds
 
 class Recorder
 
