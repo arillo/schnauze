@@ -11,7 +11,7 @@ Package.onUse(function(api) {
   
   var packages = [
     'schnauze:lib',
-    'mrt:geolocation'
+    'mdg:geolocation'
   ];
 
   api.use(packages);
