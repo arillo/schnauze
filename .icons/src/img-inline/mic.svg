@@ -2,13 +2,13 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="29.167px"
-	 height="40.333px" viewBox="0 0 29.167 40.333" enable-background="new 0 0 29.167 40.333" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="29px" height="39px"
+	 viewBox="0 0 29 39" enable-background="new 0 0 29 39" xml:space="preserve">
 <title>Mic</title>
 <g>
-	<path id="Shape" fill="#FFFFFF" d="M14.583,25.375c3.459,0,6.229-2.791,6.229-6.25l0.021-12.5c0-3.458-2.791-6.25-6.25-6.25
-		c-3.457,0-6.25,2.792-6.25,6.25v12.5C8.333,22.583,11.126,25.375,14.583,25.375L14.583,25.375z M25.625,19.125
-		c0,6.25-5.291,10.625-11.041,10.625S3.542,25.375,3.542,19.125H0c0,7.104,5.667,12.979,12.5,14v6.834h4.168v-6.834
-		c6.832-1,12.5-6.875,12.5-14H25.625L25.625,19.125z"/>
+	<path id="Shape" fill="#FFFFFF" d="M14.5,24.631c3.439,0,6.193-2.75,6.193-6.158l0.021-12.315C20.714,2.75,17.939,0,14.5,0
+		c-3.438,0-6.214,2.75-6.214,6.158v12.315C8.285,21.879,11.062,24.631,14.5,24.631L14.5,24.631z M25.477,18.474
+		c0,6.158-5.261,10.468-10.977,10.468c-5.717,0-10.979-4.311-10.979-10.468H0c0,6.999,5.634,12.787,12.428,13.793V39h4.144v-6.733
+		C23.365,31.282,29,25.494,29,18.474H25.477L25.477,18.474z"/>
 </g>
 </svg>

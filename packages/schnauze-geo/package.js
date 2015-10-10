@@ -22,7 +22,7 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/geolocation.coffee'
+    'client/geolocator.coffee'
   ], ['client']);
 
 
