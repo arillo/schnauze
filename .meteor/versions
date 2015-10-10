@@ -73,7 +73,9 @@ retry@1.0.4
 routepolicy@1.0.6
 schnauze:app@0.0.1
 schnauze:lib@0.0.1
+schnauze:map@0.0.1
 schnauze:recorder@0.0.1
+schnauze:styles@0.0.1
 session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7
