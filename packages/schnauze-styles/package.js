@@ -48,6 +48,8 @@ Package.onUse(function(api) {
     'client/sass/lib/_size.sass',
     'client/sass/lib/_truncate.sass',
 
+    'client/sass/module/_map.sass',
+
     'client/sass/utilities/_animation.sass',
     'client/sass/utilities/_cursor.sass',
     'client/sass/utilities/_dimensions.scss',
