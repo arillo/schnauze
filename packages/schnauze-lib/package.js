@@ -33,6 +33,7 @@ Package.onUse(function(api) {
     // 'ongoworks:security',
 
     // utilities
+    'nooitaf:colors',
     'mrt:q',
     'raix:eventemitter',
     'momentjs:moment',
