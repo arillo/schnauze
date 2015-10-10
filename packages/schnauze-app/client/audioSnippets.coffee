@@ -12,5 +12,5 @@ Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
         Schnauze.Collections.AudioSnippets.insert file, (err, fileObj) ->
             console.log(err, fileObj)
 
-
-Meteor.subscribe 'audioSnippets', Session.get('Schnauze.Map:bounds')
+Meteor.startup () ->
+    Meteor.subscribe 'audioSnippets', Session.get('Schnauze.Map:bounds')
