@@ -1,5 +1,5 @@
 ###
-# Schanuze EventEmitter
+# Schnauze EventEmitter
 #
 # usage: 
 #   

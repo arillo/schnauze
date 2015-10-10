@@ -1,3 +1,6 @@
 <template name="Recorder">
-  <button class="js-record">REC</button>
+  <div class="js-recorder {{#if isRecording}}is-recording{{/if}}">
+    REC
+    {{getCountdown}}
+  </div>
 </template>

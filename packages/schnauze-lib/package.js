@@ -32,9 +32,15 @@ Package.onUse(function(api) {
     // map
     'dburles:google-maps',
 
+    // security
+    // 'ongoworks:security',
+
+
     // utilities
     'mrt:q',
-    'raix:eventemitter'
+    'raix:eventemitter',
+    'momentjs:moment',
+    'flyandi:reactive-countdown'
   ];
 
   api.use(packages);
