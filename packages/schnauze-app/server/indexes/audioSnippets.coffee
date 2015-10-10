@@ -1,0 +1,1 @@
+db.cfs.audioSnippets.filerecord.ensureIndex({'metadata.loc.coordinates':'2dsphere'})

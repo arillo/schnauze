@@ -4,7 +4,10 @@ Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
     Schnauze.Geolocator.getPosition().then (pos) ->
         file = new FS.File(payload.file)
         file.metadata = 
-            coords: pos.coords
+            loc: 
+                type: 'Point'
+                coordinates: [pos.coords.longitude, pos.coords.latitude]
+                
         console.log file
         Schnauze.Collections.AudioSnippets.insert file, (err, fileObj) ->
             console.log(err, fileObj)

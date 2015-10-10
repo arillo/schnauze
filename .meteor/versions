@@ -52,6 +52,7 @@ jquery@1.11.4
 launch-screen@1.0.4
 livedata@1.0.15
 logging@1.0.8
+mdg:geolocation@1.0.3
 meteor@1.1.9
 meteor-base@1.0.1
 minifiers@1.1.7
@@ -62,7 +63,6 @@ momentjs:moment@2.10.6
 mongo@1.1.2
 mongo-id@1.0.1
 mongo-livedata@1.0.9
-mrt:geolocation@0.1.0
 mrt:q@1.0.1
 nooitaf:colors@0.0.2
 npm-mongo@1.4.39_1
