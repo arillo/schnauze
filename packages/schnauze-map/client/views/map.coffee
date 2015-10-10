@@ -46,11 +46,9 @@ updateMapBounds = (map) ->
 
 listenUpdateMapBounds = (map) ->
   map.instance.addListener 'zoom_changed', ->
-    console.log 'zoom_changed'
     updateMapBounds map
 
   map.instance.addListener 'bounds_changed', ->
-    console.log 'bounds_changed'
     updateMapBounds map
 
 renderRadius = (map, marker) ->
