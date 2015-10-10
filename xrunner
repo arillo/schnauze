@@ -1,0 +1,39 @@
+#!/bin/bash
+# A shell script to launch different configurations of the meteor app
+
+# export MAIL_URL=smtp://
+
+opt=$1
+case $opt in
+        dev)
+                NODE_OPTIONS='--debug' meteor --settings .config/settings-dev.json --port 5000
+                ;;
+        prod)
+                meteor --settings .config/settings-dev.json --port 5000 --production
+                ;;
+        ios)
+                meteor run ios --settings .config/settings-dev.json --verbose  --port 5000
+                ;;
+        iosd)
+                meteor run ios-device --settings .config/settings-dev.json --verbose  --port 5000
+                ;;
+        android)
+                meteor run android --settings .config/settings-dev.json --verbose  --port 5000
+                ;;
+        androidd)
+                meteor run android-device --settings .config/settings-dev.json --verbose  --port 5000
+                ;;
+        deploy)
+                meteor build --architecture=os.linux.x86_64 --server https://schnauze.meteor.com --mobile-settings .config/settings.json ../schnauze_deploy
+                ;;
+        *)
+                echo "Launch shell script utility"
+                echo "Usage: $0 {dev|build|deploy|ios|iosd|android|androidd}"
+                echo "  dev         : Run with node-inspector."
+                echo "  ios         : Run for ios."
+                echo "  iosd        : Run for ios-device."
+                echo "  android     : Run for android."
+                echo "  androidd    : Run for android-device."    
+                echo "  deploy      : Deploy."
+                ;;
+esac
