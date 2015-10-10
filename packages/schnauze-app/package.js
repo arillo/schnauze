@@ -14,7 +14,8 @@ Package.onUse(function(api) {
     'schnauze:styles',
     'schnauze:recorder',
     'schnauze:geo',
-    'schnauze:map'
+    'schnauze:map',
+    'schnauze:list'
   ];
 
   api.use(packages);
@@ -33,7 +34,8 @@ Package.onUse(function(api) {
 
 
   api.addFiles([
-    'server/security.coffee'
+    'server/security.coffee',
+    'server/publications/audioSnippets.coffee'
   ], ['server']);
 
 });
