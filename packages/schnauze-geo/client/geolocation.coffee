@@ -1,23 +1,30 @@
-###
-#
-# Geolocation setup
-#
-# Listen to geolocation changes and trigger event
-###
+class Geolocator
+  settings:
+    maximumAge: 3000
+    timeout: 5000
+    enableHighAccuracy: true
 
-# settings
-GeolocationSettings =
-  timeout: 5000
-  maximumAge: 3000
-  enableHighAccuracy: yes
+  getLocation: ->
+    deferred = Q.defer()
 
-GeolocationSuccess = (location) ->
-  console.log 'location', location.coords
-  Schnauze.EventEmitter.emit 'Geolocation:locationChange',
-    coords: location.coords
+    successCallback = (position)->
+        latitude = position.coords.latitude
+        longitude = position.coords.longitude
+        deferred.resolve position
 
-GeolocationError = (error) ->
-  Schnauze.EventEmitter.emit 'Geolocation:error', error
+    errorCallback = (error)-> deferred.reject(error)
 
-# start watching for location changes
-navigator.geolocation.watchPosition GeolocationSuccess, GeolocationError, GeolocationSettings
+    navigator.geolocation.getCurrentPosition successCallback, errorCallback, @settings
+
+    deferred.promise
+
+  watchLocation: ->
+    successCallback = (position) ->
+      Schnauze.EventEmitter.emit 'Geolocation:locationChange', position
+
+    errorCallback = (error) ->
+      Schnauze.EventEmitter.emit 'Geolocation:locationChangeError', error
+
+    navigator.geolocation.watchPosition successCallback, errorCallback, @settings
+
+Schnauze.Utils.Geolocator = new Geolocator
