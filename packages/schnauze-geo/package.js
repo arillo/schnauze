@@ -11,6 +11,7 @@ Package.onUse(function(api) {
   
   var packages = [
     'schnauze:lib',
+    'mdg:geolocation'
   ];
 
   api.use(packages);
@@ -21,6 +22,7 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/geolocation.coffee'
   ], ['client']);
 
 

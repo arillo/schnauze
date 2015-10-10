@@ -7,14 +7,17 @@
 
 # settings
 GeolocationSettings =
-  updateInterval: 30000
+  timeout: 5000
   maximumAge: 3000
   enableHighAccuracy: yes
 
-GeolocationCallback = (location) ->
-  EventEmitter.emit 'Geolocation:locationChange', location
+GeolocationSuccess = (location) ->
+  console.log 'location', location.coords
+  Schnauze.EventEmitter.emit 'Geolocation:locationChange',
+    coords: location.coords
+
+GeolocationError = (error) ->
+  Schnauze.EventEmitter.emit 'Geolocation:error', error
 
 # start watching for location changes
-GeolocationFG.watch GeolocationCallback, GeolocationSettings.updateInterval,
-  maximumAge: GeolocationSettings.maximumAge,
-  enableHighAccuracy: GeolocationSettings.enableHighAccuracy
+navigator.geolocation.watchPosition GeolocationSuccess, GeolocationError, GeolocationSettings
