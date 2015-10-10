@@ -13,4 +13,6 @@ Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
             console.log(err, fileObj)
 
 Meteor.startup () ->
-    Meteor.subscribe 'audioSnippets', Session.get('Schnauze.Map:bounds')
+    Tracker.autorun () ->
+        console.log 'resubscribe audioSnippets', Session.get('Schnauze.Map:bounds')
+        Meteor.subscribe 'audioSnippets', Session.get('Schnauze.Map:bounds')
