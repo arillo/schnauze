@@ -62,6 +62,7 @@ momentjs:moment@2.10.6
 mongo@1.1.2
 mongo-id@1.0.1
 mongo-livedata@1.0.9
+mrt:geolocation@0.1.0
 mrt:q@1.0.1
 nooitaf:colors@0.0.2
 npm-mongo@1.4.39_1
@@ -80,8 +81,8 @@ schnauze:geo@0.0.1
 schnauze:lib@0.0.1
 schnauze:list@0.0.1
 schnauze:map@0.0.1
-schnauze:player@0.0.1
 schnauze:menu@0.0.1
+schnauze:player@0.0.1
 schnauze:recorder@0.0.1
 schnauze:styles@0.0.1
 session@1.1.1
