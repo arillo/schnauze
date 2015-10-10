@@ -15,6 +15,10 @@ App.accessRule("blob:*");
 App.accessRule('http://*.meteor.com/*');
 App.accessRule('https://*.meteor.com/*');
 
+App.accessRule('*.google.com/*');
+App.accessRule('*.googleapis.com/*');
+App.accessRule('*.gstatic.com/*');
+
 // App.accessRule('http://*.kadira.io/*');
 // App.accessRule('https://*.kadira.io/*');
 
