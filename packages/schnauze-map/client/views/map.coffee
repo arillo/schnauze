@@ -36,9 +36,14 @@ Template.map.onCreated () ->
       marker.setPosition center
 
     centerMap = ->
-      Schnauze.Geolocator.getPosition().then (position) ->
-        center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-        map.instance.setCenter center
+      console.log 'center map'
+      Schnauze.Geolocator.getPosition()
+        .then (position) ->
+          center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+          map.instance.setCenter center
+          console.log position
+        .catch (error) ->
+          console.log error
 
     # center map once on startup
     centerMap()
