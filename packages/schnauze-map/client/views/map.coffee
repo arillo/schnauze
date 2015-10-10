@@ -14,6 +14,8 @@ Template.map.helpers
       }
 
 Template.map.onCreated () ->
+  markers = []
+
   # We can use the `ready` callback to interact with the map API once the map is ready.
   GoogleMaps.ready 'map', (map) ->
     # Add a marker to the map once it's ready
@@ -31,19 +33,33 @@ Template.map.onCreated () ->
 
     radius.bindTo 'center', marker, 'position'
 
+    Schnauze.Collections.AudioSnippets.find().observe
+      changed: ->
+        clearMarkers markers
+        renderMarkers map.instance, markers, 
+        console.log markers
+
     Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
       center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       marker.setPosition center
 
-    window.map = map.instance
-
     centerMap = ->
       Schnauze.Geolocator.getPosition()
         .then (position) ->
-          console.log position
           center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
           map.instance.setCenter center
           marker.setPosition center
+          
+          mapBounds = map.instance.getBounds()
+          bottomLeft = mapBounds.getSouthWest()
+          topRight = mapBounds.getNorthEast()
+          
+          mapBoundsSession = 
+            bottomLeft: [bottomLeft.lng(), bottomLeft.lat()]
+            topRight: [topRight.lng(), topRight.lat()]
+
+          Session.set 'Schnauze.Map:bounds', mapBoundsSession
+
         .catch (error) ->
           console.log 'Error - centerMap', error
 
@@ -57,3 +73,17 @@ Template.map.onCreated () ->
       , 200
 
     Schnauze.EventEmitter.on 'Menu:centerMap', centerMap
+
+renderMarkers = (map, markers, audioSnippets) ->
+  audioSnippets.forEach (audioSnippet) ->
+    coords = audioSnippet.metadata.loc.coordinates
+
+    markers.push new google.maps.Marker {
+      position: new google.maps.LatLng(coords[1], coords[0])
+      map: map
+      icon: 'images/map-marker.svg'
+    }
+
+clearMarkers = (markers) ->
+  _.each markers, (marker) ->
+    marker.setMap null
