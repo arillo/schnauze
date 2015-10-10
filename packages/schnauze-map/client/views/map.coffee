@@ -8,7 +8,7 @@ Template.map.helpers
       # Map initialization options
       return {
         center: new google.maps.LatLng(52.5123008, 13.4460634)
-        zoom: 8
+        zoom: 15
         disableDefaultUI: true
         styles: Schnauze.Utils.MapStyles
       }
@@ -20,15 +20,13 @@ Template.map.onCreated () ->
     marker = new google.maps.Marker {
       position: map.options.center
       map: map.instance
+      icon: 'images/map-position.svg'
     }
 
-    # Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
-    #   setMapCenter map.instance, marker, position
+    Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
+      center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+      marker.setPosition center
 
     Schnauze.Geolocator.getPosition().then (position) ->
-      setMapCenter map.instance, marker, position
-
-setMapCenter: (map, marker, position) ->
-  center = new google.maps.LatLng(position.coords.longitude, position.coords.latitude)
-  map.setCenter center
-  marker.setPosition center
+      center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+      map.instance.setCenter center
