@@ -1,0 +1,11 @@
+{
+    "kadira": {
+        "appId": "",
+        "appSecret": ""
+    },
+    "public": {
+        "ga": {
+            "account":""
+        }
+    }
+}
