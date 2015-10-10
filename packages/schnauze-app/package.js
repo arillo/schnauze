@@ -31,9 +31,8 @@ Package.onUse(function(api) {
   ], ['client']);
 
 
-  api
-
-  // api.addFiles([
-  // ], ['server']);
+  api.addFiles([
+    'server/security.coffee'
+  ], ['server']);
 
 });

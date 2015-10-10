@@ -29,6 +29,9 @@ Package.onUse(function(api) {
     'cfs:standard-packages',
     'cfs:gridfs',
 
+    // security
+    // 'ongoworks:security',
+
     // utilities
     'mrt:q',
     'raix:eventemitter',
