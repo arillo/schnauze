@@ -20,17 +20,17 @@ class Geolocator
 
   watchPosition: ->
     successCallback = (position) ->
-      Schnauze.EventEmitter.emit 'Geolocation:positionChange', position
+      Schnauze.EventEmitter.emit 'Geolocator:positionChange', position
 
     errorCallback = (error) ->
-      Schnauze.EventEmitter.emit 'Geolocation:positionChangeError', error
+      Schnauze.EventEmitter.emit 'Geolocator:positionChangeError', error
 
     navigator.geolocation.watchPosition successCallback, errorCallback, @settings
 
 Schnauze.Geolocator = geolocator = new Geolocator
 
 geolocator.getPosition()
-  .then ->
-    geolocator.watchPosition()
+  # .then ->
+  #   geolocator.watchPosition()
   .catch ->
     alert 'Error: Please enable geolocation'
