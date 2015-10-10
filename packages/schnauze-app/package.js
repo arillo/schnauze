@@ -13,6 +13,7 @@ Package.onUse(function(api) {
     'schnauze:lib',
     'schnauze:styles',
     'schnauze:recorder',
+    'schnauze:geo',
     'schnauze:map'
   ];
 
@@ -30,9 +31,8 @@ Package.onUse(function(api) {
   ], ['client']);
 
 
-  api
-
-  // api.addFiles([
-  // ], ['server']);
+  api.addFiles([
+    'server/security.coffee'
+  ], ['server']);
 
 });
