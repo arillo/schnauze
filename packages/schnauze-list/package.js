@@ -1,6 +1,6 @@
 Package.describe({
-  name: "schnauze:app",
-  summary: "Schnauze app package",
+  name: "schnauze:list",
+  summary: "Schnauze list package",
   version: "0.0.1",
   git: ""
 });
@@ -18,11 +18,9 @@ Package.onUse(function(api) {
   api.imply(packages);
 
   api.addFiles([
-    'both/collections/audioSnippets.coffee'
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/app.html'
   ], ['client']);
 
 

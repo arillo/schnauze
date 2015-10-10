@@ -28,6 +28,10 @@ Package.onUse(function(api) {
     'coffeescript',
     'fourseven:scss',
 
+    // file handling
+    'cfs:standard-packages',
+    'cfs:gridfs'
+
     
 
   ];
