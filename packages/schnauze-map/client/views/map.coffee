@@ -20,15 +20,13 @@ Template.map.onCreated () ->
     marker = new google.maps.Marker {
       position: map.options.center
       map: map.instance
+      icon: 'images/map-position.svg'
     }
 
-    # Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
-    #   setMapCenter map.instance, marker, position
+    Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
+      center = new google.maps.LatLng(position.coords.longitude, position.coords.latitude)
+      marker.setPosition center
 
     Schnauze.Geolocator.getPosition().then (position) ->
-      setMapCenter map.instance, marker, position
-
-setMapCenter: (map, marker, position) ->
-  center = new google.maps.LatLng(position.coords.longitude, position.coords.latitude)
-  map.setCenter center
-  marker.setPosition center
+      center = new google.maps.LatLng(position.coords.longitude, position.coords.latitude)
+      map.instance.setCenter center

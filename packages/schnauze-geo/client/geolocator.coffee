@@ -30,7 +30,7 @@ class Geolocator
 Schnauze.Geolocator = geolocator = new Geolocator
 
 geolocator.getPosition()
-  # .then ->
-  #   geolocator.watchPosition()
+  .then ->
+    geolocator.watchPosition()
   .catch ->
     alert 'Error: Please enable geolocation'
