@@ -4,8 +4,6 @@ class Recorder
 
   record: () ->
     console.log 'start recording'
-    return false
-    
     window.plugins.audioRecorderAPI.record ((msg) ->
       console.log '[recorder:record] success', msg
       return
@@ -22,6 +20,10 @@ class Recorder
       window.resolveLocalFileSystemURL 'file://' + msg, ((res) ->
         console.log '[recorder:resolveLocalFileSystemURL] success', msg
         res.file ((file) ->
+          
+          Schnauze.EventEmitter.emit 'Recorder:stopRecording',
+            file: file
+
           console.log '[recorder:file] success', file
           return
         ), (err) ->

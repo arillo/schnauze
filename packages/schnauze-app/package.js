@@ -25,7 +25,8 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/app.html'
+    'client/app.html',
+    'client/audioSnippets.coffee'
   ], ['client']);
 
 
