@@ -21,7 +21,9 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/recorder.coffee'
+    'client/recorder.coffee',
+    'client/views/recorder.html',
+    'client/views/recorder.coffee'
   ], ['client']);
 
 

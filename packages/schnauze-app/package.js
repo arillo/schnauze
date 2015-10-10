@@ -21,7 +21,7 @@ Package.onUse(function(api) {
   api.imply(packages);
 
   api.addFiles([
-    'both/collections/audioSnippets.coffee'
+    'both/collections/audioSnippets.coffee',
   ], ['client', 'server']);
 
   api.addFiles([
@@ -29,7 +29,7 @@ Package.onUse(function(api) {
   ], ['client']);
 
 
-
+  api
 
   // api.addFiles([
   // ], ['server']);
