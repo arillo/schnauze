@@ -1,4 +1,10 @@
 Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
     console.log '[EventEmitter::on] -> Recorder:stopRecording', payload
-    Schnauze.Collections.AudioSnippets.insert payload.file, (err, fileObj) ->
-        console.log(err, fileObj)
+
+    Schnauze.Geolocator.getPosition().then (pos) ->
+        file = new FS.File(payload.file)
+        file.metadata = 
+            coords: pos.coords
+        console.log file
+        Schnauze.Collections.AudioSnippets.insert file, (err, fileObj) ->
+            console.log(err, fileObj)
