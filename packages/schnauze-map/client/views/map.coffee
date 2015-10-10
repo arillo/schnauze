@@ -26,7 +26,8 @@ Template.map.onCreated () ->
     radius = new google.maps.Circle
       map: map.instance
       radius: Schnauze.Settings.map.radiusMeters
-      fillColor: '#AA0000'
+      fillColor: '#d32f2f'
+      strokeWeight: 0
 
     radius.bindTo 'center', marker, 'position'
 
