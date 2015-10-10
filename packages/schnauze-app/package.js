@@ -30,6 +30,8 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/views/mainLayout/mainLayout.html',
+    'client/views/mainLayout/mainLayout.coffee',
     'client/app.html',
     'client/app.coffee',
     'client/audioSnippets.coffee'
