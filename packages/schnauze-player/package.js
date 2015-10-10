@@ -13,8 +13,8 @@ Package.onUse(function(api) {
   api.use(packages);
   api.imply(packages);
 
-  // api.addFiles([
-  //   'lib/wavesurfer/wavesurfer.js',
-  //   'player.coffee'
-  // ], ['client']);
+  api.addFiles([
+    'lib/wavesurfer/wavesurfer.js',
+    'player.coffee'
+  ], ['client']);
 });
