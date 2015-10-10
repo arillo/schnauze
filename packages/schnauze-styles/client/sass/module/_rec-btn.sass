@@ -1,19 +1,20 @@
+//============================================
+// Record button
+//============================================
+
 .recbtn
   +size(75px)
-  transition: width .5s cubic-bezier(.62, .28, .23, .99), height .5s cubic-bezier(.62, .28, .23, .99)
+  +pos(50% 18px, left bottom)
+  transform: translate(-50%, 0)
+  transition: width .5s $anim-cubic , height .5s $anim-cubic
   background: $primary
-  display: block
-  margin: 0 auto
   border-radius: 50%
-  position: relative
   color: white
   text-align: center
-  z-index: 5
-  padding: 0
 
   .i
     +center(iw(i-mic),ih(i-mic))
-    transition: top .5s cubic-bezier(.62, .28, .23, .99), margin-top .5s cubic-bezier(.62, .28, .23, .99)
+    transition: top .5s $anim-cubic, margin-top .5s $anim-cubic
 
 .recbtn_time
   +center-transform()

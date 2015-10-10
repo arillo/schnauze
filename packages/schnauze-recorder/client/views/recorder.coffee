@@ -1,7 +1,7 @@
 Template.recorder.onCreated () ->
   @isRecording = new ReactiveVar false
   @countdownTimer = new Schnauze.Utils.CountdownTimer
-    duration: Schnauze.Settings.Recorder.audioDuration
+    duration: Schnauze.Settings.recorder.audioDurationSeconds
 
 Template.recorder.helpers
   isRecording: () ->
@@ -17,7 +17,7 @@ Template.recorder.events
     t.isRecording.set true
     t.countdownTimer.start()
 
-  'mouseup, touchend .js-recorder': (e, t) ->
+  'mouseleave, mouseup, touchend .js-recorder': (e, t) ->
     Schnauze.Recorder.stop()
     t.isRecording.set false
     t.countdownTimer.stop()

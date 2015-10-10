@@ -16,7 +16,9 @@ Package.onUse(function(api) {
     'schnauze:geo',
     'schnauze:map',
     'schnauze:list',
-    'schnauze:player'
+    'schnauze:player',
+    'schnauze:menu',
+    'schnauze:list'
   ];
 
   api.use(packages);
