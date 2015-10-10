@@ -29,6 +29,7 @@ cfs:upload-http@0.0.2
 cfs:worker@0.0.0
 check@1.0.6
 coffeescript@1.0.10
+dburles:google-maps@1.0.9
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.1
@@ -63,6 +64,7 @@ mongo@1.1.2
 mongo-id@1.0.1
 mongo-livedata@1.0.9
 mrt:q@0.9.7
+nooitaf:colors@0.0.2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4

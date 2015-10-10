@@ -8,7 +8,7 @@ Package.describe({
 Package.onUse(function(api) {
 
   api.versionsFrom("METEOR@1.0");
-  
+
   var packages = [
 
     // meter core packages
@@ -29,18 +29,23 @@ Package.onUse(function(api) {
     'cfs:standard-packages',
     'cfs:gridfs',
 
+    // map
+    'dburles:google-maps',
+
     // security
     // 'ongoworks:security',
 
+
     // utilities
+    'nooitaf:colors',
     'mrt:q',
     'raix:eventemitter',
     'momentjs:moment',
-    'frozeman:reactive-timer'
+    'flyandi:reactive-countdown'
   ];
 
   api.use(packages);
-  
+
   api.imply(packages);
 
   api.addFiles([
