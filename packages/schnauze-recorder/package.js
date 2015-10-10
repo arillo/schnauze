@@ -21,6 +21,8 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/utils/countdowntimer.coffee',
+    'client/settings/recorder.coffee',
     'client/recorder.coffee',
     'client/views/recorder.html',
     'client/views/recorder.coffee'
