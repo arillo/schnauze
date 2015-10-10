@@ -22,6 +22,7 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/settings/mapStyles.coffee',
     'client/views/map.html',
     'client/views/map.coffee'
   ], ['client']);
