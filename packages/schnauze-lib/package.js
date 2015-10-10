@@ -19,10 +19,7 @@ Package.onUse(function(api) {
     'session',
     'jquery',
     'tracker',
-
     'standard-minifiers',
-    // 'es5-shim'
-    // 'ecmascript'
 
     // development
     'coffeescript',
@@ -30,10 +27,11 @@ Package.onUse(function(api) {
 
     // file handling
     'cfs:standard-packages',
-    'cfs:gridfs'
+    'cfs:gridfs',
 
-    
-
+    // utilities
+    'mrt:q',
+    'raix:eventemitter'
   ];
 
   api.use(packages);
