@@ -8,7 +8,7 @@ Template.map.helpers
       # Map initialization options
       return {
         center: new google.maps.LatLng(52.5123008, 13.4460634)
-        zoom: 8
+        zoom: 15
         disableDefaultUI: true
         styles: Schnauze.Utils.MapStyles
       }
@@ -24,9 +24,9 @@ Template.map.onCreated () ->
     }
 
     Schnauze.EventEmitter.on 'Geolocator:positionChange', (position) ->
-      center = new google.maps.LatLng(position.coords.longitude, position.coords.latitude)
+      center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       marker.setPosition center
 
     Schnauze.Geolocator.getPosition().then (position) ->
-      center = new google.maps.LatLng(position.coords.longitude, position.coords.latitude)
+      center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
       map.instance.setCenter center
