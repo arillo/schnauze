@@ -31,6 +31,8 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/views/errors/geolocationError.html',
+    'client/views/errors/recorderError.html',
     'client/utils/helpers.coffee',
     'client/views/mainLayout/mainLayout.html',
     'client/views/mainLayout/mainLayout.coffee',

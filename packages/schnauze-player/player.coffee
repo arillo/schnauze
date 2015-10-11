@@ -1,7 +1,6 @@
 class Player
   constructor: () ->
     @instance = null
-    console.log 'constructor'
     ws = @getInstance()
 
   getInstance: () ->

@@ -15,4 +15,10 @@
       </div>
     </div>
   </div>
+  {{#if geolocationError}}
+    {{> geolocationError}}
+  {{/if}}
+  {{#if recorderError}}
+    {{> recorderError}}
+  {{/if}}
 </template>
