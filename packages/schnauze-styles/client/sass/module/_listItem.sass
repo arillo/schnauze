@@ -22,8 +22,19 @@
     box-shadow: 0 5px 14px 1px rgba(black, .25)
     margin: $space-double (-$space)
 
+    &:last-child
+      margin-bottom: 0
+
   &.is-open:first-child
     margin: 0 (-$space) $space-double
+
+    &:last-child
+      margin-bottom: 0
+
+  +mq($bp-sm)
+    &.is-open,
+    &.is-open:first-child
+      margin: $space-double 0
 
 
 // Trigger
@@ -98,7 +109,7 @@
   .is-open &
     height: $height-listItem-info
 
-  .is-extended &
+  .is-extended.is-open &
     height: $height-listItem-info - 40px
 
 // Wave
