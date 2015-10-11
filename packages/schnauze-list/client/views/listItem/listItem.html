@@ -1,9 +1,9 @@
 <template name="listItem">
   <li class="listItem {{#if isSelected}}is-playing{{/if}}">
 
-    <button class="listItem_trigger l-centerRow l-row-full js-listItem">
+    <button class="listItem_trigger l-centerRow l-row-full js-openPlay">
 
-      <div class="listItem_play">
+      <div class="listItem_play js-playPause">
         <svg class="listItem_icon listItem_icon-play i i-play i-fill-white"><use xlink:href="#play"></use></svg>
         <svg class="listItem_icon listItem_icon-pause i i-pause i-fill-white"><use xlink:href="#pause"></use></svg>
       </div>
