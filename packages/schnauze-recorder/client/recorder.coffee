@@ -55,12 +55,12 @@ class Recorder
 Schnauze.Recorder = new Recorder
 Schnauze.Recorder.desktop = true unless Meteor.isCordova
 
-Meteor.startup () ->
-  window.plugins.audioRecorderAPI.record ((msg) ->
-    Session.set 'Schnauze.Error:recorder', null
-    return
-  ), ((err) ->
-    console.log '[recorder:record] error', err
-    Schnauze.EventEmitter.emit 'Recorder:notAllowedError', err
-    return
-  ), 0
+# Meteor.startup () ->
+#   window.plugins.audioRecorderAPI.record ((msg) ->
+#     Session.set 'Schnauze.Error:recorder', null
+#     return
+#   ), ((err) ->
+#     console.log '[recorder:record] error', err
+#     Schnauze.EventEmitter.emit 'Recorder:notAllowedError', err
+#     return
+#   ), 0
