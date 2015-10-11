@@ -21,8 +21,8 @@ class Player
 
 Schnauze.Player = new Player
 
-Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
-  audio = Schnauze.Collections.AudioSnippets.findOne({_id: payload.audio._id})
+Schnauze.EventEmitter.on 'ListItem:playAudio', (payload) ->
+  # audio = Schnauze.Collections.AudioSnippets.findOne({_id: payload.audio._id})
   ws = Schnauze.Player.getInstance()
   if not _.isEmpty ws
     ws.destroy()
@@ -32,10 +32,10 @@ Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
 
   ws.on 'ready', () ->
     ws.play()
-  ws.load audio.url()
+  ws.load payload.audio.url()
 
 Schnauze.EventEmitter.on 'Marker:openAudio', (payload) ->
-  audio = Schnauze.Collections.AudioSnippets.findOne({_id: payload.audio._id})
+  # audio = Schnauze.Collections.AudioSnippets.findOne({_id: payload.audio._id})
   ws = Schnauze.Player.getInstance()
   if not _.isEmpty ws
     ws.destroy()
@@ -43,4 +43,4 @@ Schnauze.EventEmitter.on 'Marker:openAudio', (payload) ->
   ws.init Schnauze.Player.getConfig
     container: ".js-wavesurfer-#{audio._id}"
 
-  ws.load audio.url()
+  ws.load payload.audio.url()
