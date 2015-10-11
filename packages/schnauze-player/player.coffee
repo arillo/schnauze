@@ -22,6 +22,10 @@ Schnauze.EventEmitter.on 'ListItem:playAudio', (payload) ->
     container: ".js-wavesurfer-#{payload.audio._id}"
     waveColor: '#A8DBA8'
     progressColor: '#3B8686'
+    cursorColor: '#333'
+    height: 80
+    barWidth: 3
+    hideScrollbar: true
   ws.on 'ready', () ->
     ws.play()
   ws.load payload.audio.url()
