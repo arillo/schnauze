@@ -18,7 +18,7 @@ If you like what you are listening you can extend the life of an audio message i
 
 ## Created for the [Meteor hackaton 2015](http://meteor-2015.devpost.com/)
 
-- **Start: Sunday, October 10, 2015 (GMT+2), 11:00 AM**
+- **Start: Saturday, October 10, 2015 (GMT+2), 11:00 AM**
 - **End: Sunday, October 11, 2015 (GMT+2), 11:00 AM**
 
 ### 1. Video 1:30
