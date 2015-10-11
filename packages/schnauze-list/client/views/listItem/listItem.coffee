@@ -30,6 +30,9 @@ Template.listItem.helpers
     
     lifetime
 
+  isExtended: ->
+    Session.get 'Schnauze.AudioSnippet:lifeExtended-' + @audio._id
+
 Template.listItem.events
   'click .js-open': (e, t) ->
     unless t.data.selectedItem.get() is t
