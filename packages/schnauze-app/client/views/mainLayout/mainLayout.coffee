@@ -21,3 +21,10 @@ Template.mainLayout.helpers
 
   recorderError: () ->
     Session.get 'Schnauze.Error:recorder'
+
+Schnauze.EventEmitter.on 'Geolocator:positionChangeError', (err) ->
+  Session.set 'Schnauze.Error:geolocation', err
+
+Schnauze.EventEmitter.on 'Recorder:notAllowedError', (err) ->
+  Session.set 'Schnauze.Error:recorder', err
+
