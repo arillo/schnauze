@@ -18,10 +18,6 @@
             "maximumAge": 3000,
             "timeout": 5000,
             "enableHighAccuracy": true
-          },
-          "player": {
-              "waveColor": "#A8DBA8",
-              "progressColor": "#3B8686"
           }
         }
     }
