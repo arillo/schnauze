@@ -15,3 +15,9 @@ Template.mainLayout.helpers
 
   listStateClass: () ->
     if Template.instance().listState.get() then 'is-showingList' else ''
+
+  geolocationError: () ->
+    Session.get 'Schnauze.Error:geolocation'
+
+  recorderError: () ->
+    Session.get 'Schnauze.Error:recorder'
