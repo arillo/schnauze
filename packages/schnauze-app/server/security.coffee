@@ -7,7 +7,7 @@ Schnauze.Collections.AudioSnippets.deny
   update: ->
     false
   remove: ->
-    false
+    true
   download: ->
     false
 Schnauze.Collections.AudioSnippets.allow
@@ -16,6 +16,6 @@ Schnauze.Collections.AudioSnippets.allow
   update: ->
     true
   remove: ->
-    true
+    false
   download: ->
     true
