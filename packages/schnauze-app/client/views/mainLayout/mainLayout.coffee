@@ -4,7 +4,12 @@ Template.mainLayout.onCreated () ->
   changeListState = () ->
     @listState.set not @listState.get()
 
+  openAudioHandler = () ->
+    if !@listState.get()
+      @listState.set true
+
   Schnauze.EventEmitter.on 'Menu:toggleList', _.bind(changeListState, @)
+  Schnauze.EventEmitter.on 'Marker:openAudio', _.bind(openAudioHandler, @)
 
 Template.mainLayout.helpers
 

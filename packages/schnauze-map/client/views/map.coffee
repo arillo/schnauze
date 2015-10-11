@@ -14,7 +14,6 @@ Template.map.helpers
       }
 
 createMarker = (id, doc, markers, map) ->
-  #console.log id, doc, markers, map
   coords = doc.metadata.loc.coordinates
   marker = new google.maps.Marker {
       position: new google.maps.LatLng(coords[1], coords[0])
@@ -23,7 +22,7 @@ createMarker = (id, doc, markers, map) ->
     }
   doc._id = id
   marker.addListener 'click', () ->
-    Schnauze.EventEmitter.emit 'ListItem:loadAudio', 
+    Schnauze.EventEmitter.emit 'Marker:openAudio', 
       audio: doc
 
   markers[id] = marker
