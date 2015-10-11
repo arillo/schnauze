@@ -75,18 +75,21 @@
   transition: height .2s $anim-cubic
   overflow: hidden
   background: $teal
+  position: relative
 
   .is-playing &
     height: $height-listItem-info
 
 // Wave
-.listItem_wave
+.listItem_stats
   height: 80px
   position: relative
+  z-index: 10
 
 // Wave graphic
-.listItem_waveGraphic
+.listItem_wave
   +pos(0, all)
+  z-index: 5
 
 
 // Buttons
