@@ -29,6 +29,7 @@ cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.0.6
 coffeescript@1.0.10
+d3js:d3@3.4.13
 dburles:google-maps@1.1.5
 ddp@1.2.2
 ddp-client@1.2.1
