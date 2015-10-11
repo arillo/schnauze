@@ -5,6 +5,7 @@ class Geolocator
     deferred = Q.defer()
 
     successCallback = (position)->
+      Session.set 'Schnauze.Geolocator:currentPosition', [position.coords.longitude, position.coords.latitude]
       deferred.resolve position
 
     errorCallback = (error)->
@@ -17,7 +18,8 @@ class Geolocator
   watchPosition: ->
     successCallback = (position) ->
       Schnauze.EventEmitter.emit 'Geolocator:positionChange', position
-
+      Session.set 'Schnauze.Geolocator:currentPosition', [position.coords.longitude, position.coords.latitude]
+    
     errorCallback = (error) ->
       Schnauze.EventEmitter.emit 'Geolocator:positionChangeError', error
 
