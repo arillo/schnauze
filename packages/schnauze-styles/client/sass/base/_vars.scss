@@ -36,6 +36,7 @@ $space-half: ($space * .5);
 $space-threeQuarter: ($space * .75);
 $space-oneAndHalf: ($space * 1.5);
 $space-double: ($space * 2);
+$space-triple: ($space * 3);
 
 // Key elements
 $height-menu: 56px;
@@ -121,3 +122,14 @@ $dimension-utility-config-sm: (
 
   "sizes": $dimension-utility-sizes
 );
+
+
+// Home
+//============================================
+
+$home-fs: 18px;
+$home-title-fs: 22px;
+$homeHero-fs: 24px;
+$homeHero-title-fs: 30px;
+$home-bp-main: "(min-width: 700px)";
+$home-bp-large: "(min-width: 1200px)";
