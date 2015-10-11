@@ -2,24 +2,32 @@ Meteor.publish 'audioSnippets', (mapBounds, currentPosition) ->
   console.log 'schnauze:app'.yellow, '[publication] audioSnippets'.blue, mapBounds, currentPosition
   
   selector = {}
-  transform = (doc) -> 
-    console.log doc
-    doc
+  transform = (doc) -> doc
+  radius = Meteor.settings.public.app.map.radiusMeters / 1000 # convert meters to km
 
   # filter by bounds
   if mapBounds? and mapBounds.bottomLeft? and mapBounds.topRight?
-    selector = 'metadata.loc.coordinates':
-      $within:
-        $box : [mapBounds.bottomLeft, mapBounds.topRight]
+    {bottomLeft, topRight} = mapBounds
+    isBottomLeftWithinRadius = distance(bottomLeft[1], bottomLeft[0], currentPosition[1], currentPosition[0]) <= radius
+    isTopRightWithinRadius = distance(bottomLeft[1], bottomLeft[0], currentPosition[1], currentPosition[0]) <= radius
+    areBoundsWithinRadius = isBottomLeftWithinRadius and isTopRightWithinRadius
+
+    # ensure that markers in the radius are always shown
+    # even if bounds are contained by the radius
+    if areBoundsWithinRadius
+      selector = 'metadata.loc.coordinates':
+        $geoWithin:
+          $center: [ currentPosition, (radius / 111.12) ] # convert km to radians
+    else
+      selector = 'metadata.loc.coordinates':
+        $within:
+          $box : [mapBounds.bottomLeft, mapBounds.topRight]
 
   # set 'inRadius' flag
   if currentPosition?
-    radius = Meteor.settings.public.app.map.radiusMeters
-
     transform = (doc) ->
       coords = doc.metadata.loc.coordinates
-      doc.inRadius = distance(coords[1], coords[0], currentPosition[1], currentPosition[0]) <= radius / 1000 # convert meters to km
-      console.log 'inRadius', doc
+      doc.inRadius = distance(coords[1], coords[0], currentPosition[1], currentPosition[0]) <= radius
       doc
 
   self = this
