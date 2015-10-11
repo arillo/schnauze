@@ -31,4 +31,4 @@ geolocator.getPosition()
   .then ->
     geolocator.watchPosition()
   .catch ->
-    console.log 'Error: Please enable geolocation'
+    Schnauze.EventEmitter.emit 'Geolocator:positionChangeError', error

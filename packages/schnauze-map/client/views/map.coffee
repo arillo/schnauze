@@ -13,28 +13,28 @@ Template.map.helpers
         styles: Schnauze.Utils.MapStyles
       }
 
-createMarker = (id, doc, markers, map) ->
+createMarker = (doc, markers, map) ->
   coords = doc.metadata.loc.coordinates
-  marker = new google.maps.Marker {
+  markers[doc._id] = new google.maps.Marker {
       position: new google.maps.LatLng(coords[1], coords[0])
       map: map.instance
       icon: 'images/map-marker.svg'
     }
-  # doc._id = id
-  marker.addListener 'click', () ->
+  markers[doc._id].addListener 'click', () ->
     Schnauze.EventEmitter.emit 'Marker:openAudio', 
-      id: id
+      id: doc._id
 
-moveMarker = (id, doc, markers) ->
+moveMarker = (doc, markers) ->
   coords = doc.metadata.loc.coordinates
-  marker = markers[id]
-  marker?.setPosition(new google.maps.LatLng(coords[1], coords[0]))
+  marker = markers[doc._id]
+  if marker?
+    marker.setPosition(new google.maps.LatLng(coords[1], coords[0]))
 
-removeMarker = (id, markers) ->
-  marker = markers[id]
+removeMarker = (doc, markers) ->
+  marker = markers[doc._id]
   if marker?
     marker.setMap null
-    delete marker[id]
+    delete marker[doc._id]
 
 updateMapBounds = (map) ->
   mapBounds = map.instance.getBounds()
@@ -64,16 +64,16 @@ renderRadius = (map, marker) ->
   radius.bindTo 'center', marker, 'position'
 
 updateMarkers = (map, markers)->
-  Schnauze.Collections.AudioSnippets.find().observeChanges
-    added: (id, doc) ->
-      console.log 'added', id, doc, markers, map
-      createMarker id, doc, markers, map
-    changed: (id, doc) ->
-      console.log 'changed', id, doc, markers
-      moveMarker id, doc, markers
-    removed: (id) ->
-      console.log 'removed', id
-      removeMarker id, markers
+  Schnauze.Collections.AudioSnippets.find().observe
+    added: (doc) ->
+      console.log 'added', doc
+      createMarker doc, markers, map
+    changed: (newDoc, oldDoc) ->
+      console.log 'changed', newDoc, oldDoc
+      moveMarker newDoc, markers
+    removed: (oldDoc) ->
+      console.log 'removed', oldDoc
+      removeMarker oldDoc, markers
 
 centerMap = (map, marker)->
   Schnauze.Geolocator.getPosition()
