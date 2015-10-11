@@ -1,6 +1,7 @@
 Template.listItem.onCreated () ->
   self = @
   self.isPlaying = new ReactiveVar false
+  self.isLoading = new ReactiveVar false
 
 Template.listItem.helpers
   isSelected: () ->
@@ -10,9 +11,29 @@ Template.listItem.helpers
   isPlaying: () ->
     Template.instance().isPlaying.get()
 
+  isLoading: () ->
+    Template.instance().isLoading.get()
+
   playCount: () ->
-    console.log '#############', @
     @audio.playCount or 1
+
+  lifetime: () ->
+    settings = Schnauze.Settings.audioSnippets
+
+    waveScale = d3.scale.linear()
+      .domain([settings.defaultLifetimeMinutes, settings.maxLifetimeMinutes])
+      .range([1, 10])
+
+    lifetime = @audio.lifetime or settings.defaultLifetimeMinutes
+
+    tmpl = Template.instance()
+
+    changeWaveIcon(tmpl, Math.round(waveScale(lifetime))) if tmpl?
+    
+    lifetime
+
+  isExtended: ->
+    Session.get 'Schnauze.AudioSnippet:lifeExtended-' + @audio._id
 
 Template.listItem.events
   'click .js-open': (e, t) ->
@@ -26,31 +47,33 @@ Template.listItem.events
     else
       t.isPlaying.set true
 
-  # @TODO make work with real data. proof of concept for the pulse animation
   'click .js-extendLife': (e, t) ->
+    Schnauze.EventEmitter.emit 'ListItem:extendLife', 
+      audio: t.data.audio
 
-    icon = t.$('.js-pulse-icon')
-    currentID = icon.data('current')
-    currentIcon = icon.find('.pulse_path-' + currentID)
+changeWaveIcon = (t, level) ->
+  console.log '############### changeWaveIcon', t, level
+  #icon = t.$('.js-pulse-icon')
+  # currentID = icon.data('current')
+  # currentIcon = icon.find('.pulse_path-' + currentID)
 
-    newID = if currentID is 10 then 1 else currentID + 1
-    newIcon = icon.find('.pulse_path-' + newID)
+  # newID = level
+  # newIcon = icon.find('.pulse_path-' + newID)
 
-    icon.data('current', newID)
+  # icon.data('current', newID)
 
-    tl = new TimelineMax
+  # tl = new TimelineMax
 
-    tl.to(currentIcon, 0.4,
-      strokeDashoffset: -137
-      clearProps: 'all'
-    ).set(newIcon,
-      strokeDashoffset: 137
-    ).set(icon,
-      className: '-=is-pulse-' + currentID
-    ).set(icon,
-      className: '+=is-pulse-' + newID
-    ).to(newIcon, 0.4,
-      strokeDashoffset: 0
-      clearProps: 'all'
-    )
-
+  # tl.to(currentIcon, 0.4,
+  #   strokeDashoffset: -137
+  #   clearProps: 'all'
+  # ).set(newIcon,
+  #   strokeDashoffset: 137
+  # ).set(icon,
+  #   className: '-=is-pulse-' + currentID
+  # ).set(icon,
+  #   className: '+=is-pulse-' + newID
+  # ).to(newIcon, 0.4,
+  #   strokeDashoffset: 0
+  #   clearProps: 'all'
+  # )

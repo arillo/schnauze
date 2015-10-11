@@ -7,7 +7,6 @@ Template.list.onCreated () ->
   Tracker.autorun () ->
     item = self.selectedItem.get()
     if item
-      console.log '==========', item
       if not _.isEmpty self.ws
         self.ws.destroy()
 
@@ -15,8 +14,9 @@ Template.list.onCreated () ->
         container: ".js-wavesurfer-#{item.data.audio._id}"
 
       self.ws.load item.data.audio.url()
-    
+      item.isLoading.set true
       self.ws.on 'ready', () ->
+        item.isLoading.set false
         self.ws.play()
         item.isPlaying.set true
 
@@ -27,7 +27,6 @@ Template.list.onCreated () ->
       
       Tracker.autorun () ->
         playing = item.isPlaying.get()
-        console.log '==========', playing
         if playing
           self.ws.play()
         else
@@ -35,6 +34,7 @@ Template.list.onCreated () ->
 
   Schnauze.EventEmitter.on 'Marker:openAudio', (payload) ->
     $("[data-id='#{payload.id}'] .js-open").click()
+    # @TODO: properly scroll to position
     # console.log 'offset', offset, $('.list').scrollTop()
     # $('.l-item-scroll').scrollTop($("[data-id='#{payload.id}']").offset().top - $("[data-id='#{payload.id}']").offsetParent().offset().top)
     # Meteor.setTimeout () ->

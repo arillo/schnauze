@@ -1,5 +1,5 @@
 <template name="listItem">
-  <li class="listItem{{#if isSelected}} is-open{{/if}}{{#if isPlaying}} is-playing{{/if}}" data-id="{{audio._id}}">
+  <li class="listItem{{#if isSelected}} is-open{{/if}}{{#if isPlaying}} is-playing{{/if}}{{#if isLoading}} is-loading{{/if}}{{#if isExtended}} is-extended{{/if}}" data-id="{{audio._id}}">
 
     <button class="listItem_trigger l-centerRow l-row-full js-open">
 
@@ -14,7 +14,7 @@
             <svg class="i i-avatar u-pull-top-5 u-push-rgt-5"><use xlink:href="#avatar"></use></svg>
             Anonymous
           </p>
-          <p>{{duration}} – {{formatDate updatedAt 'ddd D MMM H:mm'}}</p>
+          <p>{{formatDate updatedAt 'ddd D MMM H:mm'}}</p>
         </div>
       {{/with}}
 
@@ -31,7 +31,7 @@
           <p class="u-fs-sm">played</p>
         </div>
         <div  class="l-item-strech u-ta-center">
-          <p class="u-fs-lg u-fw-bold">38746s</p>
+          <p class="u-fs-lg u-fw-bold">{{lifetime}}m</p>
           <p class="u-fs-sm">expire time</p>
         </div>
       </div>

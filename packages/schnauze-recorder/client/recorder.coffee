@@ -6,9 +6,7 @@ class Recorder
 
   record: () ->
     return if @desktop
-    console.log 'start recording'
     window.plugins.audioRecorderAPI.record ((msg) ->
-      console.log '[recorder:record] success', msg
       return
     ), ((msg) ->
       console.log '[recorder:record] error', msg
@@ -21,7 +19,6 @@ class Recorder
 
     self = @
     window.plugins.audioRecorderAPI.stop ((msg) ->
-      console.log '[recorder:stop] success', msg
       window.resolveLocalFileSystemURL 'file://' + msg, self.onResolveLocalFileSystemSuccess, self.onResolveLocalFileSystemError
       return
     ), ((msg) ->
@@ -34,7 +31,6 @@ class Recorder
     return if @desktop
 
     window.plugins.audioRecorderAPI.playback ((msg) ->
-      console.log '[recorder:playback] success', msg
       return
     ), ((msg) ->
       console.log '[recorder:playback] error', msg
@@ -44,11 +40,9 @@ class Recorder
   
   # file handling
   onResolveLocalFileSystemSuccess: (res) ->
-    console.log '[recorder:resolveLocalFileSystemURL] success', res
     res.file ((file) ->
       Schnauze.EventEmitter.emit 'Recorder:stopRecording',
         file: file
-      console.log '[recorder:file] success', file
       return
     ), (err) ->
       console.log '[recorder:file] err', err
@@ -62,12 +56,12 @@ class Recorder
 Schnauze.Recorder = new Recorder
 Schnauze.Recorder.desktop = true unless Meteor.isCordova
 
-# Meteor.startup () ->
-#   window.plugins.audioRecorderAPI.record ((msg) ->
-#     console.log '[recorder:record] success', msg
-#     return
-#   ), ((err) ->
-#     console.log '[recorder:record] error', err
-#     Schnauze.EventEmitter.emit 'Recorder:notAllowedError', err
-#     return
-#   ), 0
+Meteor.startup () ->
+  window.plugins.audioRecorderAPI.record ((msg) ->
+    Session.set 'Schnauze.Error:recorder', null
+    return
+  ), ((err) ->
+    console.log '[recorder:record] error', err
+    Schnauze.EventEmitter.emit 'Recorder:notAllowedError', err
+    return
+  ), 0
