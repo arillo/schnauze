@@ -1,6 +1,8 @@
 Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
   Schnauze.Geolocator.getPosition().then (pos) ->
     file = new FS.File(payload.file)
+    file.playCount = 0
+    file.lifetime = Schnauze.Settings.audioSnippets.defaultLifetimeMinutes
     file.metadata = 
       loc: 
         type: 'Point'
@@ -14,18 +16,8 @@ Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
     Schnauze.Collections.AudioSnippets.update { _id: payload.audio._id }, { $inc: { playCount: 1 } }
 
 Schnauze.EventEmitter.on 'ListItem:extendLife', (payload) ->
-  audio = payload.audio
-  
-  if audio?
-    settings = Schnauze.Settings.audioSnippets
-    lifetime = audio.lifetime or settings.defaultLifetimeMinutes
-    newLifetime = lifetime + settings.extendLifetimeMinutes
-
-    return if newLifetime is settings.maxLifetimeMinutes
-
-    Schnauze.Collections.AudioSnippets.update { _id: payload.audio._id }, { $set: { lifetime: newLifetime } }
-
-    Session.setPersistent('Schnauze.AudioSnippet:lifeExtended-' + audio._id, yes)
+  Schnauze.Collections.AudioSnippets.update { _id: payload.id }, { $set: { lifetime: payload.newLifetime } }
+  Session.setPersistent('Schnauze.AudioSnippet:lifeExtended-' + payload.id, yes)
 
 Meteor.startup () ->
   Tracker.autorun () ->
