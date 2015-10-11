@@ -49,11 +49,7 @@ Template.listItem.events
     Schnauze.EventEmitter.emit 'ListItem:extendLife', 
       audio: t.data.audio
 
-    console.log 'template1'
-
 changeWaveIcon = (t, level) ->
-  return console.log(t, level)
-
   icon = t.$('.js-pulse-icon')
   currentID = icon.data('current')
   currentIcon = icon.find('.pulse_path-' + currentID)

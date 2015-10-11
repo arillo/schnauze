@@ -44,7 +44,6 @@ updateMapBounds = (map) ->
   mapBoundsSession = 
     bottomLeft: [bottomLeft.lng(), bottomLeft.lat()]
     topRight: [topRight.lng(), topRight.lat()]
-  #console.log 'Schnauze.Map:bounds', mapBoundsSession
   Session.set 'Schnauze.Map:bounds', mapBoundsSession
 
 listenUpdateMapBounds = (map) ->
@@ -66,13 +65,10 @@ renderRadius = (map, marker) ->
 updateMarkers = (map, markers)->
   Schnauze.Collections.AudioSnippets.find().observe
     added: (doc) ->
-      console.log 'added', doc
       createMarker doc, markers, map
     changed: (newDoc, oldDoc) ->
-      console.log 'changed', newDoc, oldDoc
       moveMarker newDoc, markers
     removed: (oldDoc) ->
-      console.log 'removed', oldDoc
       removeMarker oldDoc, markers
 
 centerMap = (map, marker)->
