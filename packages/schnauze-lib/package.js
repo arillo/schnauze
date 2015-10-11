@@ -39,6 +39,7 @@ Package.onUse(function(api) {
     // utilities
     'reactive-var',
     'nooitaf:colors',
+    'infinitedg:gsap',
     'mrt:q',
     'raix:eventemitter',
     'momentjs:moment',
