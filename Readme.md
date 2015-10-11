@@ -1,9 +1,8 @@
 # [schnauze.io](https://schnauze.io)
 
-
 Record, share and listen to geo-localised audio messages. Find new stories and give more lifetime to the one you love!
 
-![Alt schnauze.io](public/images/home/mockup2.png "schnauze.io")
+![Alt schnauze.io](public/images/home/schnauze-app-feature-3.png "schnauze.io")
 
 #### Record audio messages
 
