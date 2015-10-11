@@ -8,6 +8,10 @@ Template.listItem.helpers
     inst = Template.instance()
     inst.data.selectedItem.get() is inst.data.audio._id
 
+  playCount: () ->
+    console.log '#############', @
+    @audio.playCount or 1
+
 Template.listItem.events
   'click .js-openPlay': (e, t) ->
     Schnauze.EventEmitter.emit 'ListItem:openPlayAudio',

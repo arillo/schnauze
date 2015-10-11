@@ -12,8 +12,7 @@ Meteor.publish 'audioSnippets', (mapBounds, currentPosition) ->
     isTopRightWithinRadius = distance(bottomLeft[1], bottomLeft[0], currentPosition[1], currentPosition[0]) <= radius
     areBoundsWithinRadius = isBottomLeftWithinRadius and isTopRightWithinRadius
 
-    # ensure that markers in the radius are always shown
-    # even if bounds are contained by the radius
+    # ensure that markers in the radius are always shown even if bounds are contained by the radius
     if areBoundsWithinRadius
       selector = 'metadata.loc.coordinates':
         $geoWithin:

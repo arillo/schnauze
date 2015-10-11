@@ -12,6 +12,12 @@ Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
     Schnauze.Collections.AudioSnippets.insert file, (err, fileObj) ->
       console.log(err, fileObj)
 
+Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
+  audio = payload.audio
+  
+  if audio?
+    Schnauze.Collections.AudioSnippets.update { _id: payload.audio._id }, { $inc: { playCount: 1 } }
+
 Meteor.startup () ->
   Tracker.autorun () ->
     console.log 'resubscribe audioSnippets', Session.get('Schnauze.Map:bounds'), Session.get('Schnauze.Geolocator:currentPosition')
