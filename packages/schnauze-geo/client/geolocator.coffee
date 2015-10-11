@@ -30,5 +30,6 @@ Schnauze.Geolocator = geolocator = new Geolocator
 geolocator.getPosition()
   .then ->
     geolocator.watchPosition()
+    Session.set 'Schnauze.Error:geolocation', null
   .catch ->
     Schnauze.EventEmitter.emit 'Geolocator:positionChangeError', error
