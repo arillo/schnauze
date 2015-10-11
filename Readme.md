@@ -1,6 +1,6 @@
 # [schnauze.io](https://schnauze.io)
 
-![Alt schnauze.io](public/images/home/mockup2.png "schnauze.io")
+![Alt schnauze.io](public/images/home/schnauze-app-feature-3.png "schnauze.io")
 
 Schnauze is an iOS app build with Meteor. You can record and share geo-localised audio snippets and listen to others that are close to your location. Audio messages have a limited life but if you like them you can extend their presence on the map.
 
