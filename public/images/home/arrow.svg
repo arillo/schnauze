@@ -1,4 +1,1 @@
-  <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="32px" height="20px" viewBox="0 0 32 20" enable-background="new 0 0 32 20" xml:space="preserve">
-  <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#569BBF" points="3.76,0 16,12.363 28.24,0 32,3.806 16,20 0,3.806 "/>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" viewBox="0 0 32 20"><path fill-rule="evenodd" clip-rule="evenodd" fill="#569BBF" d="M3.76 0L16 12.363 28.24 0 32 3.806 16 20 0 3.806"/></svg>

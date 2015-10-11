@@ -6,6 +6,7 @@
         <div class="listItem_play js-playPause">
           <svg class="listItem_icon listItem_icon-play i i-play i-fill-white"><use xlink:href="#play"></use></svg>
           <svg class="listItem_icon listItem_icon-pause i i-pause i-fill-white"><use xlink:href="#pause"></use></svg>
+          <div class="listItem_loader"></div>
         </div>
 
         {{#with audio}}
@@ -23,7 +24,7 @@
         {{/with}}
 
       </button>
-      
+
       <div class="listItem_info">
         <div class="listItem_wave js-wavesurfer-{{audio._id}}"></div>
         <div class="listItem_stats l-centerRow">
