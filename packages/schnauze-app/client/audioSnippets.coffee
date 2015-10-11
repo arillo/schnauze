@@ -28,9 +28,11 @@ Schnauze.EventEmitter.on 'ListItem:extendLife', (payload) ->
 
     return if newLifetime is settings.maxLifetimeMinutes
 
-    Schnauze.Collections.AudioSnippets.update { _id: payload.audio._id }, { $set: { lifetime: newLifetime } }, (error) ->
-      console.log '################# updateLifetime', error, audio._id
-      Session.setPersistent('Schnauze.AudioSnippet:lifeExtended-' + audio._id, yes) if not error?
+    Schnauze.Collections.AudioSnippets.update { _id: payload.audio._id }, { $set: { lifetime: newLifetime } }
+
+    console.log audio._id
+
+    Session.setPersistent('Schnauze.AudioSnippet:lifeExtended-' + audio._id, yes)
 
 Meteor.startup () ->
   Tracker.autorun () ->

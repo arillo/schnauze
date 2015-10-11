@@ -35,6 +35,8 @@ Schnauze is an iOS app build with Meteor. You can record and share geo-localised
 - momentjs:moment
 - flyandi:reactive-countdown
 - u2622:persistent-session
+- mrt:geolocation
+- d3js:d3
 
 ### 3. This repo
 

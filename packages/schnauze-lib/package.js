@@ -44,7 +44,7 @@ Package.onUse(function(api) {
     'raix:eventemitter',
     'momentjs:moment',
     'flyandi:reactive-countdown',
-    'u2622:persistent-session'
+    'u2622:persistent-session@0.4.3'
 
     // 'meteorhacks:kadira',
     // 'meteorhacks:zones'
