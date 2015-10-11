@@ -14,13 +14,19 @@ Template.map.helpers
       }
 
 createMarker = (id, doc, markers, map) ->
-  console.log doc
+  #console.log id, doc, markers, map
   coords = doc.metadata.loc.coordinates
-  markers[id] = new google.maps.Marker {
+  marker = new google.maps.Marker {
       position: new google.maps.LatLng(coords[1], coords[0])
       map: map.instance
       icon: 'images/map-marker.svg'
     }
+  doc._id = id
+  marker.addListener 'click', () ->
+    Schnauze.EventEmitter.emit 'ListItem:loadAudio', 
+      audio: doc
+
+  markers[id] = marker
 
 moveMarker = (id, doc, markers, map) ->
   coords = doc.metadata.loc.coordinates
@@ -41,7 +47,7 @@ updateMapBounds = (map) ->
   mapBoundsSession = 
     bottomLeft: [bottomLeft.lng(), bottomLeft.lat()]
     topRight: [topRight.lng(), topRight.lat()]
-  console.log 'Schnauze.Map:bounds', mapBoundsSession
+  #console.log 'Schnauze.Map:bounds', mapBoundsSession
   Session.set 'Schnauze.Map:bounds', mapBoundsSession
 
 listenUpdateMapBounds = (map) ->
