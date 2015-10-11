@@ -46,7 +46,6 @@ If you like what you are listening you can extend the life of an audio message i
 - mrt:q
 - raix:eventemitter
 - momentjs:moment
-- flyandi:reactive-countdown
 - u2622:persistent-session
 - d3js:d3
 

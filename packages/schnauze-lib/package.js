@@ -35,7 +35,6 @@ Package.onUse(function(api) {
     // security
     // 'ongoworks:security',
 
-
     // utilities
     'reactive-var',
     'nooitaf:colors',
@@ -43,7 +42,6 @@ Package.onUse(function(api) {
     'mrt:q',
     'raix:eventemitter',
     'momentjs:moment',
-    'flyandi:reactive-countdown',
     'u2622:persistent-session@0.4.3'
 
     // 'meteorhacks:kadira',
