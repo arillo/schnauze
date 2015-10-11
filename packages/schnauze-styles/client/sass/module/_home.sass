@@ -1,0 +1,178 @@
+// ====================================
+// Home - Presentation
+// ====================================
+
+// Variables
+// ====================================
+
+$text-size: 16px;
+$text-size-large: 20px;
+$title-size: 24px;
+$title-size-large: 30px;
+$bp-main: "(min-width: 700px)";
+$bp-large: "(min-width: 1200px)";
+
+// Home styling
+// ====================================
+
+.home
+  overflow: visible
+  font-size: $text-size
+  
+  section
+    padding: 160px 0
+  
+  // background color alternatives
+  .red
+    background-color: $primary
+
+  .teal
+    background-color: $teal
+  
+  // Layout
+  // ====================================
+  
+  // l-row on bp-main only
+  .lh-row
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    +mq($bp-main)
+      flex-direction: row
+  
+  .l-container
+    width: 80%
+    margin: 0 10%
+    padding: 0
+    +mq($bp-large)
+      width: 60%
+      margin: 0 20%
+
+  // Main section larger
+  .l-container-large
+    width: 80%
+    margin: 0 10%
+    +mq($bp-main)
+      width: 90%
+      margin: 0 5%
+    +mq($bp-large)
+      width: 70%
+      margin: 0 15%
+
+  .l-justified
+    justify-content: space-between
+
+  .l-centered
+    justify-content: space-around
+
+  .l-item-half
+    flex: 0 0 45%
+    align-self: center
+
+  .l-item-half-small
+    flex: 0 0 35%
+
+  .l-item-right
+    align-self: flex-end
+
+  // Utilities
+  // ====================================
+  
+  .u-paddtop-sm
+    padding-top: 120px
+
+  .u-nobtm
+    padding-bottom: 0
+
+  // Navigation
+  // ====================================
+
+  .nav-wrap
+    position: fixed
+    width: 100%
+    background-color: $blue-dark
+    z-index: 10
+
+  .navigation
+    justify-content: space-between
+    margin: 30px
+  
+  .menu
+    border-bottom: none
+    height: auto
+
+  .menu-item
+    display: inline
+    padding-right: 30px
+  
+  // Main section
+  // ====================================
+
+  // Icon + Title
+  .mainTitle-wrap
+    margin-bottom: 20px
+
+  .mainTitle
+    font-size: $title-size-large
+    align-self: center
+    padding-left: 20px
+
+  .mainDescription
+    margin-bottom: 60px
+    font-size: $text-size-large
+    line-height: 1.4
+
+  .download-link
+    width: 200px
+    padding: 16px 16px 20px 16px
+    border: 1px solid white
+    border-radius: 10px
+    align-items: baseline
+    justify-content: space-around
+  
+  .arrowIcon
+    display: none
+    align-self: flex-end
+    +mq($bp-main)
+      display: block
+      padding-bottom: 20px
+
+  
+  // Other sections
+  // ====================================
+
+  .subTitle
+    font-size: $title-size
+    margin-bottom: 20px
+
+  // For reversed content on small screen
+  .content-2
+    padding-bottom: 60px
+    order: 1
+    +mq($bp-main)
+      order: 2
+
+  .img-2
+    order: 2
+    align-self: center
+    +mq($bp-main)
+      align-self: flex-start
+
+  // section with negative top margin
+  .neg-margin
+    margin-top: -250px
+    padding-top: 200px
+
+  // Footer
+  // ====================================
+  
+  .footer
+    justify-content: space-between
+    padding: 30px
+    background-color: $teal
+    align-items: center
+  
+  .footer_item
+    padding-left: 16px
+    +mq($bp-main)
+      display: inline

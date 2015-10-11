@@ -18,9 +18,13 @@
   &:not(:last-child)
     margin-bottom: $space-oneAndHalf
 
+
   &.is-playing
     box-shadow: 0 5px 14px 1px rgba(black, .25)
     margin: $space-double (-$space)
+
+  &.is-playing:first-child
+    margin: 0 (-$space) $space-double
 
 
 // Trigger
@@ -71,13 +75,29 @@
   transition: height .2s $anim-cubic
   overflow: hidden
   background: $teal
+  position: relative
 
   .is-playing &
     height: $height-listItem-info
 
 // Wave
-.listItem_wave
+.listItem_stats
   height: 80px
+  position: relative
+  z-index: 10
+
+// Wave graphic
+.listItem_wave
+  +pos(0, top left right)
+  height: 80px
+  z-index: 5
+
+  &::before
+    +pos(0 0 50%, left right top)
+    background-color: light($teal-dark, 12%)
+    height: 1px
+    content: ""
+
 
 // Buttons
 .listItem_actions

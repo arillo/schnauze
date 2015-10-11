@@ -20,6 +20,46 @@
   flex: 1
 
 
+// Trigger
+//============================================
+
+.menu_trigger
+  +size(24px, 2px)
+  position: relative
+  background-color: white
+  display: inline-block
+  vertical-align: middle
+  transition: background-color .2s $anim-cubic
+
+  &::before,
+  &::after
+    +size(24px, 2px)
+    +pos(0, left)
+    content: ""
+    background-color: white
+    transition: transform .2s $anim-cubic
+
+  &::before
+    top: -8px
+
+  &::after
+    bottom: -8px
+
+  // Open state
+  .is-showingList &
+    background-color: transparent
+
+    &::before
+      transform: rotate(45deg) translate(0, 11px)
+
+    &::after
+      transform: rotate(-45deg) translate(0, -11px)
+
+
+
+
+
+
 // Record
 //============================================
 
