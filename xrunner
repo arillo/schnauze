@@ -9,7 +9,7 @@ case $opt in
                 NODE_OPTIONS='--debug' meteor --settings .config/settings-dev.json --port 5000
                 ;;
         online)
-                meteor run ios --settings .config/settings.json --mobile-server https://schnauze.meteor.com
+                meteor run ios-device --settings .config/settings.json --mobile-server https://schnauze.meteor.com
                 ;;
         prod)
                 meteor --settings .config/settings-dev.json --port 5000 --production
