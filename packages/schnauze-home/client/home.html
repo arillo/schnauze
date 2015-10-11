@@ -1,0 +1,87 @@
+<template name="home">
+  <div class="home">
+  	<div class='nav-wrap'>
+	    <nav class='l-row navigation'>
+	      <ul class='menu'>
+	        <li class='menu-item'><a href='#section-1'>Item</a></li>
+	        <li class='menu-item'><a href='#section-2'>Item</a></li>
+	        <li class='menu-item'><a href='#section-3'>Item</a></li>
+	        <li class='menu-item'><a href='#section-4'>Item</a></li>
+	      </ul>
+	      <a href='http://arillo.net'>Credit</a>
+	    </nav>
+	  </div>
+
+		{{!-- Main section --}}
+    <section id='section-1' class='u-nobtm u-paddtop-sm'>
+    	<div class='l-container-large lh-row l-justified'>
+	    	<div class='l-item-half'>
+	    		<div class='l-row mainTitle-wrap'>
+			      {{> appIcon}}
+				    <h1 class='mainTitle'>Schnauze</h1>
+				  </div>
+		      <p class='mainDescription'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+		      <a href='#' class='download-link l-row'>
+			      <svg class="i i-app-store i-fill-white"><use xlink:href="#app-store"></use></svg>
+		      	Download .ipa
+		      </a>
+		    </div>
+		    <a href='#section-2' class='arrowIcon'>
+			    {{> arrowIcon}}
+			  </a>
+		    <div class='l-item-half l-item-right'>
+		      <img src='/images/home/mockup1.png'>
+	      </div>
+	    </div>
+    </section>
+		
+		{{!-- Teal section --}}
+    <section id='section-2' class='u-paddtop-sm teal'>
+    	<div class='l-container lh-row l-justified'>
+    		<div class='img-2'>
+		      <img src='/images/home/mockup2.png'>
+		    </div>
+	      <div class='l-item-half content-2'>
+		      <h2 class='subTitle'>Feature title</h2>
+		      <p class='description'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
+		    </div>
+	    </div>
+    </section>
+
+		{{!-- Red section --}}
+    <section id='section-3' class='red neg-margin'>
+    	<div class='l-container lh-row l-centered'>
+				<div class='l-item-half-small u-push-btm-double'>
+		      <h2 class='subTitle'>Fun</h2>
+		      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+		    </div>
+				<div class='l-item-half-small u-push-btm-double'>
+		      <h2 class='subTitle'>Fun</h2>
+		      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+		    </div>
+	    </div>
+    </section>
+
+		{{!-- Dark blue section --}}
+    <section id='section-4' class='u-nobtm'>
+    	<div class='l-container lh-row l-justified'>
+    		<div class='l-item-half u-push-btm-double'>
+		      <h2 class='subTitle'>Feature title</h2>
+		      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+		    </div>
+	      <div class='l-item-half l-item-right'>
+		      <img src='/images/home/mockup3.png'>
+		    </div>
+	    </div>
+    </section>
+
+    <footer class='footer l-row'>
+      <p>An Arillo Product</p>
+      <ul>
+        <li class='footer_item'>Item</li>
+        <li class='footer_item'>Item</li>
+        <li class='footer_item'>Item</li>
+      </ul>
+    </footer>
+  </div>
+</template>

@@ -22,6 +22,8 @@ Template.list.onCreated () ->
 
       self.ws.on 'finish', () ->
         item.isPlaying.set false
+        Schnauze.EventEmitter.emit 'ListItem:openPlayAudio', 
+          audio: item.data.audio
       
       Tracker.autorun () ->
         playing = item.isPlaying.get()

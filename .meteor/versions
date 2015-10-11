@@ -48,6 +48,7 @@ html-tools@1.0.5
 htmljs@1.0.5
 http@1.1.1
 id-map@1.0.4
+infinitedg:gsap@1.11.5
 jquery@1.11.4
 launch-screen@1.0.4
 livedata@1.0.15
@@ -78,6 +79,7 @@ retry@1.0.4
 routepolicy@1.0.6
 schnauze:app@0.0.1
 schnauze:geo@0.0.1
+schnauze:home@0.0.1
 schnauze:lib@0.0.1
 schnauze:list@0.0.1
 schnauze:map@0.0.1

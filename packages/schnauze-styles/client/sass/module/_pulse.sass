@@ -4,16 +4,36 @@
 
 
 
+
 .pulse_path
-  stroke-dasharray: 50 520
-  stroke-dashoffset: 50
+  opacity: 0
+  stroke-dasharray: 137 137
+  stroke-dashoffset: 0
 
-  &.is-going-out
-    animation: pulseOut 1.5s linear
+  &.is-current
+    opacity: 1
 
-@keyframes pulseOut
-  from
-    stroke-dashoffset: 50
+  // &.is-going-out
+  //   animation: pulseOut 1s $anim-cubic both
 
-  to
-    stroke-dashoffset: -520
+  // &.is-coming-in
+  //   animation: pulseIn 1s $anim-cubic both
+
+// @for $i from 1 through 10
+//   .is-pulse-#{$i} #pulse_path-#{$i}
+//     opacity: 1
+
+
+// @keyframes pulseOut
+//   from
+//     stroke-dashoffset: 0
+
+//   to
+//     stroke-dashoffset: -137
+
+// @keyframes pulseIn
+//   from
+//     stroke-dashoffset: 137
+
+//   to
+//     stroke-dashoffset: 0

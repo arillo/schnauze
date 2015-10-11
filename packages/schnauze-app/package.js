@@ -18,7 +18,8 @@ Package.onUse(function(api) {
     'schnauze:list',
     'schnauze:player',
     'schnauze:menu',
-    'schnauze:list'
+    'schnauze:list',
+    'schnauze:home'
   ];
 
   api.use(packages);

@@ -19,7 +19,7 @@
       {{/with}}
 
       <div class="listItem_pulse">
-        {{> pulse10}}
+        {{> pulseIcon}}
       </div>
     </button>
 
@@ -37,8 +37,53 @@
       </div>
 
       <div class="listItem_actions l-row">
-        <button class="listItem_action listItem_action-primary l-item-strech">Extend life</button>
+        <button class="listItem_action listItem_action-primary l-item-strech js-extendLife">Extend life</button>
       </div>
     </div>
   </li>
+</template>
+
+
+<template name="pulseIcon">
+  <svg class="js-pulse-icon pulse" xmlns="http://www.w3.org/2000/svg" width="82px" height="38px" viewBox="0 0 82 38">
+    <path class="pulse_path pulse_path-1 is-current" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.37h33.096c0.553,0,1.385-0.242,1.854-0.538
+      l4.426-2.791c0.472-0.296,1.225-0.297,1.685,0l7.534,4.857c0.459,0.297,1.207,0.285,1.652-0.017l1.423-0.959
+      c0.453-0.306,1.271-0.552,1.822-0.549H82"/>
+
+    <path class="pulse_path pulse_path-2" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.37h33.096c0.553,0,1.332-0.313,1.729-0.695
+      L39.71,17.2c0.4-0.384,1.033-0.366,1.402,0.034l7.846,8.473c0.373,0.402,0.946,0.37,1.28-0.073l1.854-2.459
+      c0.335-0.444,1.054-0.803,1.606-0.8H82"/>
+
+    <path class="pulse_path pulse_path-3" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.37h33.096c0.553,0,1.281-0.358,1.611-0.782
+      l4.912-6.301c0.336-0.433,0.865-0.423,1.186,0.026l8.045,11.315c0.317,0.447,0.807,0.429,1.096-0.05l2.025-3.348
+      c0.286-0.477,0.969-0.858,1.521-0.855H82"/>
+
+    <path class="pulse_path pulse_path-4" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.371h33.096c0.553,0,1.234-0.375,1.524-0.842
+      l5.086-8.185c0.288-0.465,0.731-0.456,1.005,0.045l8.233,15.16c0.266,0.49,0.658,0.478,0.882-0.036l2.264-5.22
+      c0.224-0.511,0.851-0.922,1.402-0.92H82"/>
+
+    <path class="pulse_path pulse_path-5" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.37h33.096c0.553,0,1.205-0.396,1.463-0.892
+      l5.209-10.083c0.255-0.493,0.645-0.474,0.862,0.021l8.395,19.107c0.223,0.504,0.545,0.486,0.725-0.041l2.421-7.159
+      c0.179-0.527,0.771-0.951,1.323-0.949H82"/>
+
+    <path class="pulse_path pulse_path-6" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.371h33.096c0.553,0,1.186-0.415,1.404-0.91
+      l5.326-12.047c0.223-0.502,0.562-0.494,0.764,0.028l8.476,22.057c0.199,0.519,0.492,0.506,0.654-0.026l2.479-8.137
+      c0.162-0.533,0.742-0.963,1.295-0.961H82"/>
+
+    <path class="pulse_path pulse_path-7" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.369h33.096c0.553,0,1.166-0.424,1.362-0.932
+      l5.41-14c0.199-0.516,0.497-0.518,0.672,0.012l8.574,26.043c0.172,0.521,0.421,0.516,0.558-0.023l2.574-10.131
+      c0.135-0.535,0.692-0.967,1.246-0.963H82"/>
+
+    <path class="pulse_path pulse_path-8" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.369h33.096c0.553,0,1.147-0.424,1.327-0.947
+      l5.48-15.971c0.18-0.523,0.456-0.51,0.61,0.012l8.626,29.014c0.157,0.531,0.387,0.525,0.516-0.021l2.604-11.104
+      c0.128-0.543,0.679-0.979,1.231-0.977H82"/>
+
+    <path class="pulse_path pulse_path-9" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.369h33.096c0.553,0,1.135-0.434,1.297-0.957
+      l5.541-17.951c0.162-0.529,0.412-0.529,0.556,0.004l8.676,32.01c0.144,0.531,0.356,0.525,0.474-0.016l2.641-12.111
+      c0.117-0.541,0.66-0.977,1.214-0.973H82"/>
+
+    <path class="pulse_path pulse_path-10" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M0,22.4h33.096
+      c0.553,0,1.124-0.437,1.273-0.967l5.588-19.933c0.15-0.534,0.381-0.527,0.514,0.001l8.714,34.996
+      c0.133,0.535,0.328,0.535,0.441-0.02l2.664-13.09c0.111-0.546,0.648-0.986,1.201-0.984H82"/>
+  </svg>
 </template>
