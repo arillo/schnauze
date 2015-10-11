@@ -1,51 +1,54 @@
 <template name="listItem">
   <li class="listItem{{#if isSelected}} is-open{{/if}}{{#if isPlaying}} is-playing{{/if}}{{#if isLoading}} is-loading{{/if}}{{#if isExtended}} is-extended{{/if}}" data-id="{{audio._id}}">
 
-    <button class="listItem_trigger l-centerRow l-row-full js-open">
+      <button class="listItem_trigger l-centerRow l-row-full js-open">
 
-      <div class="listItem_play js-playPause">
-        <svg class="listItem_icon listItem_icon-play i i-play i-fill-white"><use xlink:href="#play"></use></svg>
-        <svg class="listItem_icon listItem_icon-pause i i-pause i-fill-white"><use xlink:href="#pause"></use></svg>
-      </div>
-
-      {{#with audio}}
-        <div class="listItem_data l-item-strech">
-          <p class="u-push-btm-quarter">
-            <svg class="i i-avatar u-pull-top-5 u-push-rgt-5"><use xlink:href="#avatar"></use></svg>
-            Anonymous
-          </p>
-          <p>{{formatDate updatedAt 'ddd D MMM H:mm'}}</p>
+        <div class="listItem_play js-playPause">
+          <svg class="listItem_icon listItem_icon-play i i-play i-fill-white"><use xlink:href="#play"></use></svg>
+          <svg class="listItem_icon listItem_icon-pause i i-pause i-fill-white"><use xlink:href="#pause"></use></svg>
         </div>
-      {{/with}}
 
-      <div class="listItem_pulse">
-        {{> pulseIcon}}
-      </div>
-    </button>
+        {{#with audio}}
+          <div class="listItem_data l-item-strech">
+            <p class="u-push-btm-quarter">
+              <svg class="i i-avatar u-pull-top-5 u-push-rgt-5"><use xlink:href="#avatar"></use></svg>
+              Anonymous
+            </p>
+            <p>{{formatDate updatedAt 'ddd D MMM H:mm'}}</p>
+          </div>
 
-    <div class="listItem_info">
-      <div class="listItem_wave js-wavesurfer-{{audio._id}}"></div>
-      <div class="listItem_stats l-centerRow">
-        <div class="l-item-strech u-ta-center">
-          <p class="u-fs-lg u-fw-bold">{{playCount}}x</p>
-          <p class="u-fs-sm">played</p>
+          <div class="listItem_pulse">
+            {{> pulseIcon icon=lifetimeIcon}}
+          </div>
+        {{/with}}
+
+      </button>
+      
+      <div class="listItem_info">
+        <div class="listItem_wave js-wavesurfer-{{audio._id}}"></div>
+        <div class="listItem_stats l-centerRow">
+          {{#with audio}}
+            <div class="l-item-strech u-ta-center">
+              <p class="u-fs-lg u-fw-bold">{{playCount}}x</p>
+              <p class="u-fs-sm">played</p>
+            </div>
+            <div  class="l-item-strech u-ta-center">
+              <p class="u-fs-lg u-fw-bold">{{lifetime}}m</p>
+              <p class="u-fs-sm">expire time</p>
+            </div>
+          {{/with}}
         </div>
-        <div  class="l-item-strech u-ta-center">
-          <p class="u-fs-lg u-fw-bold">{{lifetime}}m</p>
-          <p class="u-fs-sm">expire time</p>
+
+        <div class="listItem_actions l-row">
+          <button class="listItem_action listItem_action-primary l-item-strech js-extendLife">Extend life</button>
         </div>
       </div>
-
-      <div class="listItem_actions l-row">
-        <button class="listItem_action listItem_action-primary l-item-strech js-extendLife">Extend life</button>
-      </div>
-    </div>
   </li>
 </template>
 
 
 <template name="pulseIcon">
-  <div data-current="1" class="js-pulse-icon pulse is-pulse-1">
+  <div data-current="1" class="js-pulse-icon pulse is-pulse-{{icon}}">
     <svg  xmlns="http://www.w3.org/2000/svg" width="82px" height="38px" viewBox="0 0 82 38">
       <path data-id="1" class="pulse_path pulse_path-1" fill="none" stroke="#FFFFFF" stroke-width="2" d="M0.208,22.37h33.096c0.553,0,1.385-0.242,1.854-0.538
         l4.426-2.791c0.472-0.296,1.225-0.297,1.685,0l7.534,4.857c0.459,0.297,1.207,0.285,1.652-0.017l1.423-0.959
