@@ -54,6 +54,7 @@ Package.onUse(function(api) {
     'client/sass/module/_menu.sass',
     'client/sass/module/_list.sass',
     'client/sass/module/_listItem.sass',
+    'client/sass/module/_brand.sass',
 
     'client/sass/utilities/_animation.sass',
     'client/sass/utilities/_cursor.sass',
