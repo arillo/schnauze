@@ -20,6 +20,9 @@
       </div>
     </div>
   <![endif]-->
-  {{> home}}
-  {{!-- {{> mainLayout}} --}}
+  {{#if isCordova}}
+    {{> mainLayout}}
+  {{else}}
+    {{> home}}
+  {{/if}}
 </body>
