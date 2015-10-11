@@ -8,6 +8,9 @@ case $opt in
         dev)
                 NODE_OPTIONS='--debug' meteor --settings .config/settings-dev.json --port 5000
                 ;;
+        online)
+                meteor run ios --settings .config/settings.json --mobile-server https://schnauze.meteor.com
+                ;;
         prod)
                 meteor --settings .config/settings-dev.json --port 5000 --production
                 ;;
@@ -24,16 +27,21 @@ case $opt in
                 meteor run android-device --settings .config/settings-dev.json --verbose  --port 5000
                 ;;
         deploy)
+                meteor  deploy schnauze.meteor.com --settings .config/settings.json
+                ;;
+        build)
                 meteor build --architecture=os.linux.x86_64 --server https://schnauze.meteor.com --mobile-settings .config/settings.json ../schnauze_deploy
                 ;;
         *)
                 echo "Launch shell script utility"
                 echo "Usage: $0 {dev|build|deploy|ios|iosd|android|androidd}"
                 echo "  dev         : Run with node-inspector."
+                echo "  online      : Run online."
                 echo "  ios         : Run for ios."
                 echo "  iosd        : Run for ios-device."
                 echo "  android     : Run for android."
                 echo "  androidd    : Run for android-device."    
                 echo "  deploy      : Deploy."
+                echo "  build       : Build."
                 ;;
 esac
