@@ -20,13 +20,15 @@ Template.listItem.helpers
   lifetime: () ->
     settings = Schnauze.Settings.audioSnippets
 
-    # window.waveScale = waveScale = d3.scale.linear()
-    #   .domain([settings.defaultLifetimeMinutes, settings.maxLifetimeMinutes])
-    #   .range([1, 10])
+    waveScale = d3.scale.linear()
+      .domain([settings.defaultLifetimeMinutes, settings.maxLifetimeMinutes])
+      .range([1, 10])
 
     lifetime = @audio.lifetime or settings.defaultLifetimeMinutes
 
-    #changeWaveIcon(Template.instance(), Math.round(waveScale(lifetime)))
+    tmpl = Template.instance()
+
+    changeWaveIcon(tmpl, Math.round(waveScale(lifetime))) if tmpl?
     
     lifetime
 
@@ -50,27 +52,28 @@ Template.listItem.events
       audio: t.data.audio
 
 changeWaveIcon = (t, level) ->
-  icon = t.$('.js-pulse-icon')
-  currentID = icon.data('current')
-  currentIcon = icon.find('.pulse_path-' + currentID)
+  console.log '############### changeWaveIcon', t, level
+  #icon = t.$('.js-pulse-icon')
+  # currentID = icon.data('current')
+  # currentIcon = icon.find('.pulse_path-' + currentID)
 
-  newID = level
-  newIcon = icon.find('.pulse_path-' + newID)
+  # newID = level
+  # newIcon = icon.find('.pulse_path-' + newID)
 
-  icon.data('current', newID)
+  # icon.data('current', newID)
 
-  tl = new TimelineMax
+  # tl = new TimelineMax
 
-  tl.to(currentIcon, 0.4,
-    strokeDashoffset: -137
-    clearProps: 'all'
-  ).set(newIcon,
-    strokeDashoffset: 137
-  ).set(icon,
-    className: '-=is-pulse-' + currentID
-  ).set(icon,
-    className: '+=is-pulse-' + newID
-  ).to(newIcon, 0.4,
-    strokeDashoffset: 0
-    clearProps: 'all'
-  )
+  # tl.to(currentIcon, 0.4,
+  #   strokeDashoffset: -137
+  #   clearProps: 'all'
+  # ).set(newIcon,
+  #   strokeDashoffset: 137
+  # ).set(icon,
+  #   className: '-=is-pulse-' + currentID
+  # ).set(icon,
+  #   className: '+=is-pulse-' + newID
+  # ).to(newIcon, 0.4,
+  #   strokeDashoffset: 0
+  #   clearProps: 'all'
+  # )

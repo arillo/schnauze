@@ -25,8 +25,6 @@ Schnauze.EventEmitter.on 'ListItem:extendLife', (payload) ->
 
     Schnauze.Collections.AudioSnippets.update { _id: payload.audio._id }, { $set: { lifetime: newLifetime } }
 
-    console.log audio._id
-
     Session.setPersistent('Schnauze.AudioSnippet:lifeExtended-' + audio._id, yes)
 
 Meteor.startup () ->
