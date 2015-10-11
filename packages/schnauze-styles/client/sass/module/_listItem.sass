@@ -88,8 +88,15 @@
 
 // Wave graphic
 .listItem_wave
-  +pos(0, all)
+  +pos(0, top left right)
+  height: 80px
   z-index: 5
+
+  &::before
+    +pos(0 0 50%, left right top)
+    background-color: light($teal-dark, 12%)
+    height: 1px
+    content: ""
 
 
 // Buttons
