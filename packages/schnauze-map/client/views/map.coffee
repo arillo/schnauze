@@ -28,6 +28,9 @@ createMarker = (id, doc, markers, map) ->
 
   markers[id] = marker
 
+  markers[id].addListener 'click', ->
+    console.log coords
+
 moveMarker = (id, doc, markers, map) ->
   coords = doc.metadata.loc.coordinates
   marker = markers[id]

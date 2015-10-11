@@ -10,8 +10,13 @@ class Player
 
   getConfig: (add) ->
     config = 
-      waveColor: '#A8DBA8'
-      progressColor: '#3B8686'
+      waveColor: '#256A7B'
+      progressColor: '#205e6e'
+      cursorColor: 'transparent'
+      height: 80
+      normalize: true
+      barWidth: 3
+      hideScrollbar: true
     return _.extend config, add
 
 Schnauze.Player = new Player
@@ -37,8 +42,4 @@ Schnauze.EventEmitter.on 'ListItem:loadAudio', (payload) ->
   ws.init Schnauze.Player.getConfig
     container: ".js-wavesurfer-#{audio._id}"
 
-  ###
-  ws.on 'ready', () ->
-    ws.play()
-  ###
   ws.load audio.url()
