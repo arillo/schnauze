@@ -1,25 +1,26 @@
 Template.listItem.onCreated () ->
   self = @
   self.isPlaying = new ReactiveVar false
-  Schnauze.EventEmitter.on 'Marker:openAudio', (payload) ->
-    self.data.selectedItem.set payload.audio._id
 
 Template.listItem.helpers
   isSelected: () ->
     inst = Template.instance()
-    inst.data.selectedItem.get() is inst.data.audio._id
+    inst.data.selectedItem.get() is inst
 
   isPlaying: () ->
     Template.instance().isPlaying.get()
 
 Template.listItem.events
   'click .js-open': (e, t) ->
-    t.data.selectedItem.set t.data.audio._id
+    console.log 'open'
+    t.data.selectedItem.set t unless t.data.selectedItem.get() is t
+    
 
   'click .js-playPause': (e, t) ->
-    if self.isPlaying.get()
-      self.isPlaying.set false
+
+    return unless t.data.selectedItem.get() is t
+    e.stopPropagation()
+    if t.isPlaying.get()
+      t.isPlaying.set false
     else
-      self.isPlaying.set true
-      Schnauze.EventEmitter.emit 'ListItem:playAudio',
-        audio: t.data.audio
+      t.isPlaying.set true
