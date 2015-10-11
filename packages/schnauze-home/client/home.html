@@ -1,87 +1,109 @@
 <template name="home">
   <div class="home">
-  	<div class='nav-wrap'>
-	    <nav class='l-row navigation'>
-	      <ul class='menu'>
-	        <li class='menu-item'><a href='#section-1'>Item</a></li>
-	        <li class='menu-item'><a href='#section-2'>Item</a></li>
-	        <li class='menu-item'><a href='#section-3'>Item</a></li>
-	        <li class='menu-item'><a href='#section-4'>Item</a></li>
-	      </ul>
-	      <a href='http://arillo.net'>Credit</a>
-	    </nav>
-	  </div>
 
-		{{!-- Main section --}}
-    <section id='section-1' class='u-nobtm u-paddtop-sm'>
-    	<div class='l-container-large lh-row l-justified'>
-	    	<div class='l-item-half'>
-	    		<div class='l-row mainTitle-wrap'>
-			      {{> appIcon}}
-				    <h1 class='mainTitle'>Schnauze</h1>
-				  </div>
-		      <p class='mainDescription'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-		      <a href='#' class='download-link l-row'>
-			      <svg class="i i-app-store i-fill-white"><use xlink:href="#app-store"></use></svg>
-		      	Download .ipa
-		      </a>
-		    </div>
-		    <a href='#section-2' class='arrowIcon'>
-			    {{> arrowIcon}}
-			  </a>
-		    <div class='l-item-half l-item-right'>
-		      <img src='/images/home/mockup1.png'>
-	      </div>
-	    </div>
-    </section>
-		
-		{{!-- Teal section --}}
-    <section id='section-2' class='u-paddtop-sm teal'>
-    	<div class='l-container lh-row l-justified'>
-    		<div class='img-2'>
-		      <img src='/images/home/mockup2.png'>
-		    </div>
-	      <div class='l-item-half content-2'>
-		      <h2 class='subTitle'>Feature title</h2>
-		      <p class='description'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</p>
-		    </div>
-	    </div>
-    </section>
+    {{#if isCordova}}
+      <button id="section-1" class="homeSection homeBackButton js-go-back">
+        <div class="homeContainer">
+          ← &nbsp; Go back
+        </div>
+      </button>
+    {{else}}
+      {{!-- Main section --}}
+      <section id="section-1" class="homeSection homeSection-noBtm">
+        <div class="homeContainer">
 
-		{{!-- Red section --}}
-    <section id='section-3' class='red neg-margin'>
-    	<div class='l-container lh-row l-centered'>
-				<div class='l-item-half-small u-push-btm-double'>
-		      <h2 class='subTitle'>Fun</h2>
-		      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-		    </div>
-				<div class='l-item-half-small u-push-btm-double'>
-		      <h2 class='subTitle'>Fun</h2>
-		      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-		    </div>
-	    </div>
-    </section>
+          <div class="homeHero">
+            <div class="homeHero_content">
+              <div class="homeHero_title">
+                <img src="/images/home/app-icon.svg">
+                <h1>Schnauze</h1>
+              </div>
 
-		{{!-- Dark blue section --}}
-    <section id='section-4' class='u-nobtm'>
-    	<div class='l-container lh-row l-justified'>
-    		<div class='l-item-half u-push-btm-double'>
-		      <h2 class='subTitle'>Feature title</h2>
-		      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-		    </div>
-	      <div class='l-item-half l-item-right'>
-		      <img src='/images/home/mockup3.png'>
-		    </div>
-	    </div>
+              <p class="homeHero_desc">
+                Record, share and listen to geo-localised audio messages. Find new stories and give more lifetime to the one you love!
+              </p>
+
+              <p class="homeHero_btn">
+                <a href="#" class="download-link">
+                  <svg class="i i-app-store i-fill-white"><use xlink:href="#app-store"></use></svg>
+                  Download .ipa
+                </a>
+              </p>
+            </div>
+
+            <div class="homeHero_img">
+              <img class="u-img-max" src="/images/home/mockup1.png">
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    {{/if}}
+
+    {{!-- Teal section --}}
+    <section id="section-2" class="homeSection homeSection-teal">
+      <div class="homeContainer">
+        <div class="homeFeature homeFeature-reverse">
+
+          <div class="homeFeature_content">
+            <h2 class="homeFeature_title">Record audio messages</h2>
+            <p class="homeFeature_desc">
+              With Schnauze you can record geo-localised audio snippets. Simply press and hold the record button and start speaking to place and share your message on the map!
+            </p>
+          </div>
+
+          <div class="homeFeature_img">
+            <img src="/images/home/mockup2.png">
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <footer class='footer l-row'>
-      <p>An Arillo Product</p>
-      <ul>
-        <li class='footer_item'>Item</li>
-        <li class='footer_item'>Item</li>
-        <li class='footer_item'>Item</li>
-      </ul>
+    {{!-- Red section --}}
+    <section id="section-4" class="homeSection homeSection-red homeSection-noBtm">
+      <div class="homeContainer">
+        <div class="homeFeature">
+
+          <div class="homeFeature_content">
+            <h2 class="homeFeature_title">Listen to messages around you</h2>
+            <p class="homeFeature_desc">You can listen to all the audio files that are close enough to your location. Simply tap on them in the map or navigate through them in the list view.</p>
+          </div>
+
+          <div class="homeFeature_img">
+            <img src="/images/home/mockup3.png">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {{!-- Blue section --}}
+    <section id="section-2" class="homeSection">
+      <div class="homeContainer">
+        <div class="homeFeature homeFeature-reverse">
+
+          <div class="homeFeature_content">
+            <h2 class="homeFeature_title">Extend life of a snippet</h2>
+            <p class="homeFeature_desc">
+              If you like what you are listening you can extend the life of an audio message in the map. Tap on ‘Extend life’ to give more time to that audio snippet.
+            </p>
+          </div>
+
+          <div class="homeFeature_img">
+            <img src="/images/home/mockup2.png">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="homeFooter">
+      <div class="homeContainer">
+        <p class="homeFooter_credit"><a href="http://arillo.net" target="_blank">An Arillo Product</a></p>
+        <p class="homeFooter_msg">...build in a crazy night in Berlin</p>
+      </div>
     </footer>
   </div>
 </template>

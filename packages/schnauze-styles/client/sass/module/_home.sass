@@ -2,177 +2,174 @@
 // Home - Presentation
 // ====================================
 
-// Variables
-// ====================================
 
-$text-size: 16px;
-$text-size-large: 20px;
-$title-size: 24px;
-$title-size-large: 30px;
-$bp-main: "(min-width: 700px)";
-$bp-large: "(min-width: 1200px)";
-
-// Home styling
+// Wrap
 // ====================================
 
 .home
-  overflow: visible
-  font-size: $text-size
-  
-  section
+  overflow-x: hidden
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+  font-size: $home-fs
+  line-height: 1.35
+  height: 100vh
+
+  p
+    margin-bottom: $home-fs * $lh
+
+
+// Back button
+// ====================================
+
+.homeBackButton
+
+
+// Sections
+// ====================================
+
+.homeSection
+  padding: 60px 0
+  position: relative
+
+  +mq($home-bp-main)
     padding: 160px 0
-  
-  // background color alternatives
-  .red
-    background-color: $primary
 
-  .teal
-    background-color: $teal
-  
-  // Layout
-  // ====================================
-  
-  // l-row on bp-main only
-  .lh-row
+.homeSection-noBtm
+  padding-bottom: 0
+
+.homeSection-red
+  background-color: $primary
+
+.homeSection-teal
+  background-color: $teal
+
+
+// Container
+// ====================================
+
+.homeContainer
+  +cf
+  max-width: 820px + ($space-double * 2)
+  padding: 0 $space-double
+  margin: 0 auto
+
+
+// Hero
+// ====================================
+
+.homeHero
+  +mq($home-bp-main)
     display: flex
-    flex-direction: column
-    align-items: stretch
-    +mq($bp-main)
-      flex-direction: row
-  
-  .l-container
-    width: 80%
-    margin: 0 10%
-    padding: 0
-    +mq($bp-large)
-      width: 60%
-      margin: 0 20%
-
-  // Main section larger
-  .l-container-large
-    width: 80%
-    margin: 0 10%
-    +mq($bp-main)
-      width: 90%
-      margin: 0 5%
-    +mq($bp-large)
-      width: 70%
-      margin: 0 15%
-
-  .l-justified
+    align-items: center
     justify-content: space-between
 
-  .l-centered
-    justify-content: space-around
+.homeHero_content
+  +mq($home-bp-main)
+    margin-right: $space-triple
+    max-width: 400px
 
-  .l-item-half
-    flex: 0 0 45%
-    align-self: center
+.homeHero_title
+  display: flex
+  align-items: center
+  margin-bottom: $space-double
 
-  .l-item-half-small
-    flex: 0 0 35%
+  img
+    margin-right: $space
+  h1
+    font-size: $homeHero-title-fs
 
-  .l-item-right
-    align-self: flex-end
+.homeHero_desc
+  font-size: $homeHero-fs
+  margin-bottom: $homeHero-fs * $lh !important
 
-  // Utilities
-  // ====================================
-  
-  .u-paddtop-sm
-    padding-top: 120px
-
-  .u-nobtm
-    padding-bottom: 0
-
-  // Navigation
-  // ====================================
-
-  .nav-wrap
-    position: fixed
-    width: 100%
-    background-color: $blue-dark
-    z-index: 10
-
-  .navigation
-    justify-content: space-between
-    margin: 30px
-  
-  .menu
-    border-bottom: none
-    height: auto
-
-  .menu-item
-    display: inline
-    padding-right: 30px
-  
-  // Main section
-  // ====================================
-
-  // Icon + Title
-  .mainTitle-wrap
-    margin-bottom: 20px
-
-  .mainTitle
-    font-size: $title-size-large
-    align-self: center
-    padding-left: 20px
-
-  .mainDescription
-    margin-bottom: 60px
-    font-size: $text-size-large
-    line-height: 1.4
-
-  .download-link
-    width: 200px
-    padding: 16px 16px 20px 16px
+.homeHero_btn
+  a
+    padding: 18px 30px
     border: 1px solid white
-    border-radius: 10px
-    align-items: baseline
-    justify-content: space-around
-  
-  .arrowIcon
-    display: none
-    align-self: flex-end
-    +mq($bp-main)
-      display: block
-      padding-bottom: 20px
+    border-radius: 8px
+    display: inline-block
 
-  
-  // Other sections
-  // ====================================
+  .i
+    margin-top: -4px
+    margin-right: 12px
 
-  .subTitle
-    font-size: $title-size
-    margin-bottom: 20px
+.homeHero_img
+  text-align: right
+  overflow: hidden
+  max-height: 280px
 
-  // For reversed content on small screen
-  .content-2
-    padding-bottom: 60px
-    order: 1
-    +mq($bp-main)
+  img
+    +size(auto)
+    max-width: 170px
+
+  +mq($home-bp-main)
+    max-height: none
+
+    img
+      max-width: 100%
+
+
+// Feature
+// ====================================
+
+.homeFeature
+  display: flex
+  flex-direction: column
+
+  +mq($home-bp-main)
+    align-items: center
+    flex-direction: row
+    justify-content: center
+
+.homeFeature_img
+  text-align: center
+
+  img
+    +size(auto)
+    max-width: 200px
+
+  +mq($home-bp-main)
+    .homeFeature-reverse &
+      order: 1
+
+    img
+      max-width: 100%
+
+
+.homeFeature_content
+  margin-bottom: $space-double
+
+  +mq($home-bp-main)
+    max-width: 320px
+    margin-right: $space-triple
+
+    .homeFeature-reverse &
+      margin-right: 0
+      margin-left: $space-triple
       order: 2
 
-  .img-2
-    order: 2
-    align-self: center
-    +mq($bp-main)
-      align-self: flex-start
+.homeFeature_title
+  margin-bottom: $space
+  font-size: $home-title-fs
 
-  // section with negative top margin
-  .neg-margin
-    margin-top: -250px
-    padding-top: 200px
 
-  // Footer
-  // ====================================
-  
-  .footer
-    justify-content: space-between
-    padding: 30px
-    background-color: $teal
-    align-items: center
-  
-  .footer_item
-    padding-left: 16px
-    +mq($bp-main)
-      display: inline
+// Footer
+// ====================================
+
+.homeFooter
+  padding: 30px 0
+  background-color: $teal-dark
+  text-align: center
+
+  .homeFooter_credit
+    margin-bottom: $space-half
+
+    +mq($home-bp-main)
+      float: left
+      margin: 0
+
+  .homeFooter_msg
+    margin: 0
+    opacity: .5
+    +mq($home-bp-main)
+      float: right
