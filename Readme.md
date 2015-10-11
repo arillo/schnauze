@@ -39,4 +39,8 @@ Schnauze is an iOS app build with Meteor. You can record and share geo-localised
 
 ### 3. This repo
 
+To run the app in an ios simulator, just run:
+
+    ./xrunner online
+
 **Done with love from Berlin @ [Arillo](http://arillo.net)**
