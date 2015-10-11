@@ -16,14 +16,11 @@ Template.listItem.helpers
 
 Template.listItem.events
   'click .js-open': (e, t) ->
-    console.log 'open'
-    t.data.selectedItem.set t unless t.data.selectedItem.get() is t
-    
+    unless t.data.selectedItem.get() is t
+      t.data.selectedItem.set t
 
   'click .js-playPause': (e, t) ->
-
     return unless t.data.selectedItem.get() is t
-    e.stopPropagation()
     if t.isPlaying.get()
       t.isPlaying.set false
     else

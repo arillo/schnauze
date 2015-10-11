@@ -20,10 +20,10 @@ createMarker = (id, doc, markers, map) ->
       map: map.instance
       icon: 'images/map-marker.svg'
     }
-  doc._id = id
+  # doc._id = id
   marker.addListener 'click', () ->
     Schnauze.EventEmitter.emit 'Marker:openAudio', 
-      audio: doc
+      id: id
 
 moveMarker = (id, doc, markers) ->
   coords = doc.metadata.loc.coordinates
