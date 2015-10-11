@@ -9,10 +9,10 @@ Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
         coordinates: [pos.coords.longitude, pos.coords.latitude]
     Schnauze.Collections.AudioSnippets.insert file, (err, fileObj) ->
       # @TODO: fix this
-      Meteor.setTimeout () ->
-        Schnauze.EventEmitter.emit 'Marker:openAudio', 
-          id: fileObj._id
-      , 1000
+      # Meteor.setTimeout () ->
+      #   Schnauze.EventEmitter.emit 'Marker:openAudio', 
+      #     id: fileObj._id
+      # , 1000
 
 Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
   audio = payload.audio

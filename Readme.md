@@ -23,7 +23,7 @@ If you like what you are listening you can extend the life of an audio message i
 - **End: Sunday, October 11, 2015 (GMT+2), 11:00 AM**
 
 ### 1. Video 1:30
-[Watch the video](http://vimeo.com)
+[Watch the video](https://vimeo.com/142040946)
 
 ### 2. Packages used in the project
 
@@ -52,11 +52,15 @@ If you like what you are listening you can extend the life of an audio message i
 
 ### 3. This repo
 
-The app currently only is targeting iOs. We are planning to add android support in the futurw. To test the app in an ios simulator, just run:
+The app currently only is targeting iOS. We are planning to add android support in the future. To test the app in an iOS simulator, just run:
 
     ./xrunner ios
 
 If you want to get a TestFlight invitation just e-mail us at we<at>arillo.net
 
+### Future develpment
+
+- Allow to reply audio snippets
+- Autoplay by walking through the city
 
 **Done with love from Berlin @ [Arillo](http://arillo.net)**
