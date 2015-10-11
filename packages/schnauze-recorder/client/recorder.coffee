@@ -63,7 +63,9 @@ Schnauze.Recorder = new Recorder
 Schnauze.Recorder.desktop = true unless Meteor.isCordova
 
 Meteor.startup () ->
+  console.log Meteor.startup
   window.plugins.audioRecorderAPI.record ((msg) ->
+    Session.set 'Schnauze.Error:recorder', null
     console.log '[recorder:record] success', msg
     return
   ), ((err) ->
