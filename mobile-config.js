@@ -1,5 +1,5 @@
 App.info({
-  id: 'com.meteor.schnauze',
+  id: 'io.schnauze.app',
   name: 'Schnauze',
   description: 'Location based audio snippets',
   version: '0.0.1',
