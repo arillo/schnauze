@@ -18,7 +18,6 @@
   &:not(:last-child)
     margin-bottom: $space-oneAndHalf
 
-
   &.is-open
     box-shadow: 0 5px 14px 1px rgba(black, .25)
     margin: $space-double (-$space)
@@ -45,15 +44,32 @@
   transition: opacity .1s $anim-cubic
 
   &-pause
+  &-pause
     opacity: 0
 
-  .is-playing &
-
-    &-play
+  .is-loading &
+    &-play,
+    &-pause
       opacity: 0
 
+  .is-playing &
+    &-play
+      opacity: 0
     &-pause
       opacity: 1
+
+.listItem_loader
+  +center(22px)
+  border: 5px solid white
+  border-top-color: transparent
+  border-radius: 50%
+  animation: spin .5s infinite linear
+  z-index: 90
+  opacity: 0
+  transition: opacity .1s $anim-cubic
+
+  .is-loading &
+    opacity: 1
 
 // Trigger - Data
 .listItem_data
@@ -76,9 +92,14 @@
   overflow: hidden
   background: $teal
   position: relative
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
 
   .is-open &
     height: $height-listItem-info
+
+  .is-extended &
+    height: $height-listItem-info - 40px
 
 // Wave
 .listItem_stats
@@ -104,3 +125,5 @@
   line-height: 40px
   background: $primary
   text-align: center
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
