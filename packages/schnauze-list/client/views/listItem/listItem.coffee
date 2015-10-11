@@ -1,4 +1,7 @@
 Template.listItem.onCreated () ->
+  inst = Template.instance()
+  Schnauze.EventEmitter.on 'Marker:openAudio', (payload) ->
+    inst.data.selectedItem.set payload.audio._id
 
 Template.listItem.helpers
   isSelected: () ->
@@ -6,7 +9,8 @@ Template.listItem.helpers
     inst.data.selectedItem.get() is inst.data.audio._id
 
 Template.listItem.events
-  'click .js-listItem': (e, t) ->
-    t.data.selectedItem.set t.data.audio._id
-    Schnauze.EventEmitter.emit 'ListItem:playAudio',
+  'click .js-openPlay': (e, t) ->
+    Schnauze.EventEmitter.emit 'ListItem:openPlayAudio',
       audio: t.data.audio
+
+    t.data.selectedItem.set t.data.audio._id
