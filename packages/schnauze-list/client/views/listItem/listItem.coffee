@@ -1,6 +1,7 @@
 Template.listItem.onCreated () ->
   self = @
   self.isPlaying = new ReactiveVar false
+  self.isLoading = new ReactiveVar false
 
 Template.listItem.helpers
   isSelected: () ->
@@ -9,6 +10,9 @@ Template.listItem.helpers
 
   isPlaying: () ->
     Template.instance().isPlaying.get()
+
+  isLoading: () ->
+    Template.instance().isLoading.get()
 
   playCount: () ->
     console.log '#############', @

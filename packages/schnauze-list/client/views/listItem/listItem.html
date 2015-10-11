@@ -1,5 +1,5 @@
 <template name="listItem">
-  <li class="listItem{{#if isSelected}} is-open{{/if}}{{#if isPlaying}} is-playing{{/if}}" data-id="{{audio._id}}">
+  <li class="listItem{{#if isSelected}} is-open{{/if}}{{#if isPlaying}} is-playing{{/if}}{{#if isLoading}} is-loading{{/if}}" data-id="{{audio._id}}">
 
     <button class="listItem_trigger l-centerRow l-row-full js-open">
 
