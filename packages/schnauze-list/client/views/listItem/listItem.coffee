@@ -10,6 +10,10 @@ Template.listItem.helpers
   isPlaying: () ->
     Template.instance().isPlaying.get()
 
+  playCount: () ->
+    console.log '#############', @
+    @audio.playCount or 1
+
 Template.listItem.events
   'click .js-open': (e, t) ->
     console.log 'open'
