@@ -15,8 +15,9 @@ Template.list.onCreated () ->
         container: ".js-wavesurfer-#{item.data.audio._id}"
 
       self.ws.load item.data.audio.url()
-    
+      item.isLoading.set true
       self.ws.on 'ready', () ->
+        item.isLoading.set false
         self.ws.play()
         item.isPlaying.set true
 
