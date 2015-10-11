@@ -9,8 +9,6 @@ Template.recorder.helpers
   countdown: () ->
     Template.instance().countdownTimer.countdown.get()
 
-
-
 Template.recorder.events
   'mousedown, touchstart .js-recorder': (e, t) ->
     Schnauze.Recorder.record()
