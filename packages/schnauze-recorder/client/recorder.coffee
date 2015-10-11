@@ -16,7 +16,6 @@ class Recorder
 
   stop: () ->
     return if @desktop
-
     self = @
     window.plugins.audioRecorderAPI.stop ((msg) ->
       window.resolveLocalFileSystemURL 'file://' + msg, self.onResolveLocalFileSystemSuccess, self.onResolveLocalFileSystemError

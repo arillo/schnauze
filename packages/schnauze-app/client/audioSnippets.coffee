@@ -8,6 +8,8 @@ Schnauze.EventEmitter.on 'Recorder:stopRecording', (payload) ->
         type: 'Point'
         coordinates: [pos.coords.longitude, pos.coords.latitude]
     Schnauze.Collections.AudioSnippets.insert file, (err, fileObj) ->
+      Schnauze.EventEmitter.emit 'Marker:openAudio', 
+        id: fileObj._id
 
 Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
   audio = payload.audio
