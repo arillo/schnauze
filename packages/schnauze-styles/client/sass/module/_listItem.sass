@@ -19,11 +19,11 @@
     margin-bottom: $space-oneAndHalf
 
 
-  &.is-playing
+  &.is-open
     box-shadow: 0 5px 14px 1px rgba(black, .25)
     margin: $space-double (-$space)
 
-  &.is-playing:first-child
+  &.is-open:first-child
     margin: 0 (-$space) $space-double
 
 
@@ -77,24 +77,24 @@
   background: $teal
   position: relative
 
-  .is-playing &
+  .is-open &
     height: $height-listItem-info
 
 // Wave
 .listItem_stats
   height: 80px
   position: relative
-  z-index: 10
+  z-index: $z-listItem-stats
 
 // Wave graphic
 .listItem_wave
   +pos(0, top left right)
   height: 80px
-  z-index: 5
+  z-index: $z-listItem-wave
 
   &::before
     +pos(0 0 50%, left right top)
-    background-color: light($teal-dark, 12%)
+    background-color: light($teal-dark, 10%)
     height: 1px
     content: ""
 
