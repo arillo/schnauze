@@ -1,4 +1,7 @@
 Template.listItem.onCreated () ->
+  inst = Template.instance()
+  Schnauze.EventEmitter.on 'Marker:openAudio', (payload) ->
+    inst.data.selectedItem.set payload.audio._id
 
 Template.listItem.helpers
   isSelected: () ->
@@ -9,9 +12,5 @@ Template.listItem.events
   'click .js-openPlay': (e, t) ->
     Schnauze.EventEmitter.emit 'ListItem:openPlayAudio',
       audio: t.data.audio
-    ###
-    if t.data.audio._id == t.data.selectedItem.get()
-      console.log 'alreday open'
-    else
-    ###
+
     t.data.selectedItem.set t.data.audio._id

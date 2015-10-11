@@ -12,16 +12,12 @@ $i-map-inline: () !default
 
 @function icon-width($name, $inline: false)
   $name: $name + "-width"
-  $val-bg: map-get($i-map-bg, $name)
-  $val-inline: map-get($i-map-inline, $name)
-  $val: if($inline, $val-inline, $val-bg)
+  $val: map-get($i-map-inline, $name)
 
   @if $val
     @return $val
-  @else if $val-inline
-    @return $val-inline
   @else
-    @warn "Icon not defined"
+    @warn "Icon '#{$name}' not defined"
     @return false
 
 // Alias
@@ -34,16 +30,12 @@ $i-map-inline: () !default
 
 @function icon-height($name, $inline: false)
   $name: $name + "-height"
-  $val-bg: map-get($i-map-bg, $name)
-  $val-inline: map-get($i-map-inline, $name)
-  $val: if($inline, $val-inline, $val-bg)
+  $val: map-get($i-map-inline, $name)
 
   @if $val
     @return $val
-  @else if $val-inline
-    @return $val-inline
   @else
-    @warn "Icon not defined"
+    @warn "Icon '#{$name}' not defined"
     @return false
 
 // Alias
@@ -54,25 +46,25 @@ $i-map-inline: () !default
 // Icon Position
 //============================================
 
-@function icon-position($name)
-  $name: $name + "-position"
-  $val: map-get($i-map-bg, $name)
+// @function icon-position($name)
+//   $name: $name + "-position"
+//   $val: map-get($i-map-bg, $name)
 
-  @if $val
-    @return $val
-  @else
-    @warn "Icon not defined"
-    @return false
+//   @if $val
+//     @return $val
+//   @else
+//     @warn "Icon not defined"
+//     @return false
 
-=icon-position($name)
-  background-position: icon-position($name)
+// =icon-position($name)
+//   background-position: icon-position($name)
 
-// Alias
-@function ip($name)
-  @return icon-position($name)
+// // Alias
+// @function ip($name)
+//   @return icon-position($name)
 
-=ip($name)
-  +icon-position($name)
+// =ip($name)
+//   +icon-position($name)
 
 
 // Icon Size

@@ -1,4 +1,7 @@
 <template name="mainLayout">
+  <button class="brand{{#if isIos}} is-ios{{/if}}">
+    <svg class="brand_logo i i-schnauze i-fill-white"><use xlink:href="#schnauze"></use></svg>
+  </button>
   <div class="l-wrap">
     <div class="l-top js-top-view {{listStateClass}}">
       {{> map}}

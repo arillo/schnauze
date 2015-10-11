@@ -22,6 +22,7 @@ class Player
 Schnauze.Player = new Player
 
 Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
+  audio = Schnauze.Collections.AudioSnippets.findOne({_id: payload.audio._id})
   ws = Schnauze.Player.getInstance()
   if not _.isEmpty ws
     ws.destroy()
@@ -31,9 +32,9 @@ Schnauze.EventEmitter.on 'ListItem:openPlayAudio', (payload) ->
 
   ws.on 'ready', () ->
     ws.play()
-  ws.load payload.audio.url()
+  ws.load audio.url()
 
-Schnauze.EventEmitter.on 'ListItem:loadAudio', (payload) ->
+Schnauze.EventEmitter.on 'Marker:openAudio', (payload) ->
   audio = Schnauze.Collections.AudioSnippets.findOne({_id: payload.audio._id})
   ws = Schnauze.Player.getInstance()
   if not _.isEmpty ws

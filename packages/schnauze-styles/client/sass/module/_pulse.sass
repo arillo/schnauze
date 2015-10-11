@@ -1,0 +1,19 @@
+//============================================
+// Pulse
+//============================================
+
+
+
+.pulse_path
+  stroke-dasharray: 50 520
+  stroke-dashoffset: 50
+
+  &.is-going-out
+    animation: pulseOut 1.5s linear
+
+@keyframes pulseOut
+  from
+    stroke-dashoffset: 50
+
+  to
+    stroke-dashoffset: -520

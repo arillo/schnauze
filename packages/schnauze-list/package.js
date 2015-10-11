@@ -8,19 +8,20 @@ Package.describe({
 Package.onUse(function(api) {
 
   api.versionsFrom("METEOR@1.0");
-  
+
   var packages = [
     'schnauze:lib',
   ];
 
   api.use(packages);
-  
+
   api.imply(packages);
 
   api.addFiles([
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/views/includes/pulse10.html',
     'client/views/listItem/listItem.html',
     'client/views/listItem/listItem.coffee',
     'client/views/list/list.html',
