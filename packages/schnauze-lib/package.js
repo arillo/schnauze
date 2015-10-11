@@ -45,6 +45,9 @@ Package.onUse(function(api) {
     'momentjs:moment',
     'flyandi:reactive-countdown',
     'u2622:persistent-session'
+
+    // 'meteorhacks:kadira',
+    // 'meteorhacks:zones'
   ];
 
   api.use(packages);
