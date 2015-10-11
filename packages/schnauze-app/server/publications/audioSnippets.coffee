@@ -2,7 +2,9 @@ Meteor.publish 'audioSnippets', (mapBounds, currentPosition) ->
   console.log 'schnauze:app'.yellow, '[publication] audioSnippets'.blue, mapBounds, currentPosition
   
   selector = {}
-  transform = (doc) -> doc
+  transform = (doc) -> 
+    console.log doc
+    doc
 
   # filter by bounds
   if mapBounds? and mapBounds.bottomLeft? and mapBounds.topRight?
@@ -17,20 +19,20 @@ Meteor.publish 'audioSnippets', (mapBounds, currentPosition) ->
     transform = (doc) ->
       coords = doc.metadata.loc.coordinates
       doc.inRadius = distance(coords[1], coords[0], currentPosition[1], currentPosition[0]) <= radius / 1000 # convert meters to km
-      console.log doc.inRadius
+      console.log 'inRadius', doc
       doc
 
   self = this
 
   observer = Schnauze.Collections.AudioSnippets.find(selector).observe(
     added: (doc) ->
-      self.added 'audioSnippets', doc._id, transform(doc)
+      self.added 'cfs.audioSnippets.filerecord', doc._id, transform(doc)
       return
     changed: (newDocument, oldDocument) ->
-      self.changed 'audioSnippets', oldDocument._id, transform(newDocument)
+      self.changed 'cfs.audioSnippets.filerecord', oldDocument._id, transform(newDocument)
       return
     removed: (oldDocument) ->
-      self.removed 'audioSnippets', oldDocument._id
+      self.removed 'cfs.audioSnippets.filerecord', oldDocument._id
       return
   )
 
