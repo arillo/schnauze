@@ -43,7 +43,10 @@ Package.onUse(function(api) {
     'mrt:q',
     'raix:eventemitter',
     'momentjs:moment',
-    'flyandi:reactive-countdown'
+    'flyandi:reactive-countdown',
+
+    // 'meteorhacks:kadira',
+    // 'meteorhacks:zones'
   ];
 
   api.use(packages);
