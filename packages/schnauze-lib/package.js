@@ -31,7 +31,7 @@ Package.onUse(function(api) {
 
     // map
     'dburles:google-maps',
-
+    'datariot:ganalytics',
     // security
     // 'ongoworks:security',
 

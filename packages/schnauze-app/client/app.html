@@ -18,9 +18,12 @@
       </div>
     </div>
   <![endif]-->
+  {{> app}}
   {{#if isCordova}}
     {{> mainLayout}}
   {{else}}
     {{> home}}
   {{/if}}
 </body>
+<template name="app">
+</template>
