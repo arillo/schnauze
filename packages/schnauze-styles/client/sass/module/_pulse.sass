@@ -10,18 +10,15 @@
   stroke-dasharray: 137 137
   stroke-dashoffset: 0
 
-  &.is-current
-    opacity: 1
-
   // &.is-going-out
   //   animation: pulseOut 1s $anim-cubic both
 
   // &.is-coming-in
   //   animation: pulseIn 1s $anim-cubic both
 
-// @for $i from 1 through 10
-//   .is-pulse-#{$i} #pulse_path-#{$i}
-//     opacity: 1
+@for $i from 1 through 10
+  .is-pulse-#{$i} .pulse_path-#{$i}
+    opacity: 1
 
 
 // @keyframes pulseOut
