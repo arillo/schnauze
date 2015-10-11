@@ -22,6 +22,9 @@ createMarker = (id, doc, markers, map) ->
       icon: 'images/map-marker.svg'
     }
 
+  markers[id].addListener 'click', ->
+    console.log coords
+
 moveMarker = (id, doc, markers, map) ->
   coords = doc.metadata.loc.coordinates
   marker = markers[id]
