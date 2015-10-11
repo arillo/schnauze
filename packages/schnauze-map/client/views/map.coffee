@@ -20,22 +20,17 @@ createMarker = (id, doc, markers, map) ->
       map: map.instance
       icon: 'images/map-marker.svg'
     }
-  doc._id = id
+  # doc._id = id
   marker.addListener 'click', () ->
     Schnauze.EventEmitter.emit 'Marker:openAudio', 
-      audio: doc
+      id: id
 
-  markers[id] = marker
-
-  markers[id].addListener 'click', ->
-    console.log coords
-
-moveMarker = (id, doc, markers, map) ->
+moveMarker = (id, doc, markers) ->
   coords = doc.metadata.loc.coordinates
   marker = markers[id]
   marker?.setPosition(new google.maps.LatLng(coords[1], coords[0]))
 
-removeMarker = (id, markers, map) ->
+removeMarker = (id, markers) ->
   marker = markers[id]
   if marker?
     marker.setMap null
