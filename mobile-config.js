@@ -6,35 +6,18 @@ App.info({
   // buildNumber: process.env.BUILD_NUMBER,
   author: 'Arillo GmbH',
   email: 'we@arillo.net',
-  website: 'https://schnauze.meteor.com'
+  website: 'https://schnauze.io'
 });
 
 App.accessRule("blob:*");
 
 // ACCESS RULES
-App.accessRule('http://*.meteor.com/*');
-App.accessRule('https://*.meteor.com/*');
+App.accessRule('http://*.schnauze.io/*');
+App.accessRule('https://*.schnauze.io/*');
 
 App.accessRule('*.google.com/*');
 App.accessRule('*.googleapis.com/*');
 App.accessRule('*.gstatic.com/*');
-
-// App.accessRule('http://*.kadira.io/*');
-// App.accessRule('https://*.kadira.io/*');
-
-// App.accessRule('https://enginex.kadira.io/*', false);
-
-// App.accessRule('http://www.google-analytics.com/*');
-// App.accessRule('https://www.google-analytics.com/*');
-
-// App.accessRule('http://*.doubleclick.net/*');
-// App.accessRule('https://*.doubleclick.net/*');
-
-// App.accessRule('http://*.gstatic.com/*');
-// App.accessRule('https://*.gstatic.com/*');
-
-// App.accessRule('http://*.google.com/*');
-// App.accessRule('https://*.google.com/*');
 
 App.icons({
   // iOS

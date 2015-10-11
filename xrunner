@@ -9,7 +9,9 @@ case $opt in
                 NODE_OPTIONS='--debug' meteor --settings .config/settings-dev.json --port 5000
                 ;;
         online)
-                meteor run ios --settings .config/settings.json --mobile-server https://schnauze.io --production
+                export ROOT_URL=https://schnauze.io/
+                export DDP_DEFAULT_CONNECTION_URL=https://schnauze.io/
+                meteor run ios-device --settings .config/settings-dev.json --mobile-server https://schnauze.io:443 --production
                 ;;
         prod)
                 meteor --settings .config/settings.json --port 5000 --production

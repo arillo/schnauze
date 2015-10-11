@@ -1,8 +1,21 @@
 # [schnauze.io](https://schnauze.io)
 
+
+Record, share and listen to geo-localised audio messages. Find new stories and give more lifetime to the one you love!
+
 ![Alt schnauze.io](public/images/home/mockup2.png "schnauze.io")
 
-Schnauze is an iOS app build with Meteor. You can record and share geo-localised audio snippets and listen to others that are close to your location. Audio messages have a limited life but if you like them you can extend their presence on the map.
+#### Record audio messages
+
+With Schnauze you can record geo-localised audio snippets. Simply press and hold the record button and start speaking to place and share your message on the map!
+
+#### Listen to messages around you
+
+You can listen to all the audio files that are close enough to your location. Simply tap on them in the map or navigate through them in the list view.
+
+#### Extend life of a snippet
+
+If you like what you are listening you can extend the life of an audio message in the map. Tap on ‘Extend life’ to give more time to that audio snippet.
 
 ## Created for the [Meteor hackaton 2015](http://meteor-2015.devpost.com/)
 
@@ -39,8 +52,11 @@ Schnauze is an iOS app build with Meteor. You can record and share geo-localised
 
 ### 3. This repo
 
-To run the app in an ios simulator, just run:
+The app currently only is targeting iOs. We are planning to add android support in the futurw. To test the app in an ios simulator, just run:
 
-    ./xrunner online
+    ./xrunner ios
+
+If you want to get a TestFlight invitation just e-mail us at we<at>arillo.net
+
 
 **Done with love from Berlin @ [Arillo](http://arillo.net)**
