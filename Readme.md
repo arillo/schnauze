@@ -54,9 +54,9 @@ The app currently only is targeting iOS. We are planning to add android support 
 
     ./xrunner ios
 
-If you want to get a TestFlight invitation just e-mail us at we<at>arillo.net
+If you want to get a TestFlight invitation just e-mail us at we(at)arillo.net
 
-### Future develpment
+### Future development
 
 - Allow to reply audio snippets
 - Autoplay by walking through the city
